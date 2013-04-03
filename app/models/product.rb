@@ -43,11 +43,11 @@ class Product < ActiveRecord::Base
   def percent_of_original
     if category_ids.present?
       percent_of_category = category_sales.map do |category_sale|
-                        (100 - category_sale.percent_off) / BigDecimal.new(100)
-                      end.inject(BigDecimal.new(1)) do |memo, percent_of_total|
-                            memo = memo * percent_of_total
-                            memo
-                          end
+        (100 - category_sale.percent_off) / BigDecimal.new(100)
+      end.inject(BigDecimal.new(1)) do |memo, percent_of_total|
+        memo = memo * percent_of_total
+        memo
+      end
     end
     if category_ids.present?
       percent_of_product * percent_of_category

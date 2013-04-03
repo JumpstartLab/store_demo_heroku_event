@@ -10,8 +10,8 @@ describe 'the user cart view' do
 
   context 'when there are items in the cart' do
     before(:each) do
-      product = FactoryGirl.create(:product)
-      visit product_path(product)
+      @product = FactoryGirl.create(:product)
+      visit product_path(@product)
       click_button 'Add to Cart'
       visit cart_path
     end
@@ -22,6 +22,16 @@ describe 'the user cart view' do
 
     context 'the user wants to empty the cart' do
       it 'gets emptied' do
+        visit product_path(@product)
+        click_button 'Add to Cart'
+        visit cart_path
+        click_link 'Remove'
+        expect(page).to have_content('Your cart is empty')
+      end
+    end
+
+    context 'the user wants to remove an item from the cart' do
+      it 'gets removed' do
         click_button 'Empty Cart'
         expect(current_path).to eq root_path
       end
@@ -36,7 +46,6 @@ describe 'the user cart view' do
         fill_in  'carts_quantity', with: '0'
         click_button 'Update'
         expect(current_path).to eq cart_path
-        # expect(current_cart.count).to decrease_by 1
       end
     end
   end
