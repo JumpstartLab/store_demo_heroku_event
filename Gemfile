@@ -10,10 +10,7 @@ gem 'jquery-rails'
 gem 'sorcery'
 gem 'paperclip'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
-
-group :production do
-  gem 'pg'
-end
+gem 'pg'
 
 group :production do
   gem 'pg'
@@ -28,7 +25,6 @@ end
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
-  gem 'sqlite3'
   gem 'cane'
   gem 'reek'
   gem 'debugger'
