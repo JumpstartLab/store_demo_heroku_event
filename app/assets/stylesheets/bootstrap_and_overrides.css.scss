@@ -7,9 +7,25 @@ body {
 
 
 // Nav Bar
+
+.logo-pic {
+  float: left;
+}
+
+.logo-text {
+  float: left;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: -10px;
+}
+
+.nav-buttons {
+  margin-top: 20px;
+}
+
 .navbar a.brand {
   font-size: 250%;
-  font-family: 'Alex Brush', cursive;
+  font-family: 'Josefin Sans', sans-serif;
   color: #779f29;
   padding-top:18px;
 }

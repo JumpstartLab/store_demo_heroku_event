@@ -49,7 +49,7 @@ en:
     confirmlogout: 'Are you sure? This will clear your cart'
     add: 'Add to Cart'
   store:
-    name: "Frankie's Creatures"
+    name: "Frank's-Monsterporium"
   confirm: 'Are you sure?'
   checkout: 'Checkout'
   purchase: 'Purchase'
