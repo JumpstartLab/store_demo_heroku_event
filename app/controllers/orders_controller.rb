@@ -24,6 +24,7 @@ class OrdersController < ApplicationController
                                      token: params[:stripeToken])
     if @order.valid?
       session[:cart] = current_cart.destroy
+      Mailer.order_confirmation(current_user, @order).deliver
       redirect_to account_order_path(@order), :notice => "Successfully created order!"
     else
       redirect_to cart_path, :notice => "Checkout failed."
@@ -36,6 +37,7 @@ class OrdersController < ApplicationController
                                      token: params[:stripeToken])
     if @order.valid?
       session[:cart] = current_cart.destroy
+      Mailer.order_confirmation(current_user, @order).deliver
       redirect_to account_order_path(@order), :notice => "Successfully created order!"
     else
       redirect_to cart_path, :notice => "Checkout failed."
