@@ -9,7 +9,7 @@ feature "Public User Views Products" do
     end
 
     it "displays products" do
-        page.should have_content(@product.description)
+      page.should have_content(@product.title)
     end
   end
 
