@@ -6,11 +6,11 @@ describe Search do
 
       before(:each) do
         @user = FactoryGirl.create(:user)
-        nicknacks = FactoryGirl.create(:category, title: 'nicknacks')
-        superheroes = FactoryGirl.create(:category, title: 'superheroes')
-        FactoryGirl.create(:product, categories: [nicknacks], title: 'gum', description: 'sticky', status: 'active', price: 2.99)
-        FactoryGirl.create(:product, categories: [superheroes], title: 'envelope', description: 'green', status: 'active', price: 18.99)
-        FactoryGirl.create(:product, categories: [nicknacks], title: 'cup', description: 'half-full', status: 'retired', price: 1.99)
+        @nicknacks = FactoryGirl.create(:category, title: 'nicknacks')
+        @superheroes = FactoryGirl.create(:category, title: 'superheroes')
+        FactoryGirl.create(:product, categories: [@nicknacks], title: 'gum', description: 'sticky', status: 'active', price: 2.99)
+        FactoryGirl.create(:product, categories: [@superheroes], title: 'envelope', description: 'green', status: 'active', price: 18.99)
+        FactoryGirl.create(:product, categories: [@nicknacks], title: 'cup', description: 'half-full', status: 'retired', price: 1.99)
       end
 
       it 'returns all active products in db when no category is specified (default homepage load)' do
@@ -19,7 +19,7 @@ describe Search do
       end
 
       it 'returns all active products for the specified category' do
-        products = Search.filter_products({category_id: 1})
+        products = Search.filter_products({category_id: @superheroes.id})
         expect(products.count).to eq 1
       end
     end
@@ -28,7 +28,7 @@ describe Search do
   describe '.filter_user_orders' do
     before(:each) do
       @user = FactoryGirl.create(:user)
-      product1 = FactoryGirl.create(:product, title: 'Sweaty Hair', description: 'Sticky')
+      product1 = FactoryGirl.create(:product, title: 'Dog sweat', description: 'Sticky')
       product2 = FactoryGirl.create(:product, title: 'Dancing Bird', description: 'Something')
       product3 = FactoryGirl.create(:product, title: 'Flocking Buffalo', description: 'Crossfit sweat')
       FactoryGirl.create(:order, user: @user).order_items = [FactoryGirl.create(:order_item, product: product1)]

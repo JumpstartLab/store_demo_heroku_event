@@ -1,10 +1,6 @@
 class OrdersController < ApplicationController
   before_filter :require_login
 
-  def new
-    @order = Order.new
-  end
-
   def index
     @orders = Search.filter_user_orders(current_user.id, params)
   end

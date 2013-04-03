@@ -95,7 +95,7 @@ describe "admin dashboard" do
         it "changing quantity ONLY when status pending or paid" do
           fill_in('admin_order_item_quantity', with: '10')
           click_button('Update')
-          expect(page).to have_content(@order_item.unit_price * 10)
+          expect(page).to have_content(@order_item.unit_price * 5)
 
           expect(page).to have_xpath("//input[@id='admin_order_item_quantity']")
           click_button('cancel')

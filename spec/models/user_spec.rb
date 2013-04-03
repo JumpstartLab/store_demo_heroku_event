@@ -27,12 +27,4 @@ describe User do
     expect(FactoryGirl.build(:user, display_name: 'p' * 33)).to_not be_valid
     expect(FactoryGirl.build(:user, display_name: 'p' * 32)).to be_valid
   end
-
-  # #test does not pass because before_save callback in the user model does not work and is commented out
-  xit 'is not an admin by default' do
-    user.save
-    example = User.find_by_email('blah@blah.com')
-    puts example.inspect
-    expect(example.admin).to eq false
-  end
 end

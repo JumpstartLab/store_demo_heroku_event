@@ -15,15 +15,18 @@ class Payment
 
   def charge
     begin
-      charge = Stripe::Charge.create(:amount => price,
-                                     :currency => "usd",
-                                     :card => token,
-                                     :description => email)
+      charge = charge_stripe
       order.status = 'paid'
       order.save
       charge
-    rescue Stripe::CardError => e
-      e.message
+    rescue
     end
+  end
+
+  def charge_stripe
+    Stripe::Charge.create(:amount => price,
+                          :currency => "usd",
+                          :card => token,
+                          :description => email)
   end
 end

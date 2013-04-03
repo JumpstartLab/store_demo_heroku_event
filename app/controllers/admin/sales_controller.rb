@@ -28,18 +28,10 @@ class Admin::SalesController < ApplicationController
     end
   end
 
-  def edit
-    @sale = Sale.find(params[:id])
-    @products = Product.all
-    @categories = Category.all
-  end
-
   def end
     @sale = Sale.find(params[:id])
     if @sale.end
       redirect_to admin_sales_path, :notice  => "Successfully ended sale."
-    else
-      head 400
     end
   end
 
@@ -47,8 +39,6 @@ class Admin::SalesController < ApplicationController
     @sale = Sale.find(params[:id])
     if @sale.activate
       redirect_to admin_sales_path, :notice  => "Successfully activated sale."
-    else
-      head 400
     end
   end
 
