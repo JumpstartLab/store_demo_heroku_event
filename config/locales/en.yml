@@ -41,6 +41,7 @@ en:
     english: 'English'
     french: 'French'
     creaturespeak: 'Creature-speak'
+    canadian: 'Canadian'
   back:
     home: 'Back to Home'
   cart:
@@ -69,6 +70,7 @@ en:
     login: 'Login'
     signup: 'Sign Up'
     languages: 'zomg!'
+    search: 'Search'
   home:
     welcome: 'Welcome'
   categories:
