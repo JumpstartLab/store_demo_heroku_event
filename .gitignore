@@ -22,3 +22,4 @@
 
 # simplecov coverage folder
 /coverage
+.env
