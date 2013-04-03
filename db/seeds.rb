@@ -7,9 +7,6 @@ User.create(full_name: "Steve Klabnik", email: "demoXX+steve@jumpstartlab.com", 
 file = File.open('./public/images/great-slump.jpg')
 product1 = Product.create(title: "The Great Slump", description: "The Great Slump has a single claw arm.", price: 104.19, status: 'active', image: file)
 file.close
-file = File.open('./public/images/marcy_shadow.png')
-product2 = Product.create(title: "Marcy", description: "Marcy is the most beautiful hairball you'll ever meet.", price: 17.95, status: 'active', image: file)
-file.close
 file = File.open('./public/images/slump-sr.jpg')
 product3 = Product.create(title: "Slump Sr.", description: "Slump Sr. has been there, done that.", price: 2.50, status: 'active', image: file)
 file.close

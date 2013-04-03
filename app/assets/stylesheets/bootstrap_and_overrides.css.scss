@@ -4,7 +4,7 @@ body {
   background: url('blurbg.png') repeat fixed center;
   //background-color: #5685ac;
   color: #395974;
-  font-family: 'Josefin Slab', serif;
+  font-family: 'Tahoma', sans-serif;
   font-size: 100%;
 }
 @import "bootstrap-responsive";
@@ -67,15 +67,13 @@ body {
 }
 
 
-//Change the Cart Button Color, Can recreate at http://http://twitterbootstrapbuttons.w3masters.nl/
+//Cart, Category, and Search Buttons, can recreate at http://http://twitterbootstrapbuttons.w3masters.nl/
 
 .btn-custom-lighten.active {
   color: rgba(255, 255, 255, 0.75);
 }
 .btn-custom-lighten {
   color: #ffffff;
-  font-family:'Josefin Sans', sans-serif;
-  font-size: 18px;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #c8163a;
   background-image: -moz-linear-gradient(top, #b61435, #e41942);
@@ -107,46 +105,10 @@ body {
   background-color: #b61435 ;
 }
 
-//SEARCH AND CATEGORY BUTTON ##############################################
-.btn-custom-lighten.active {
-  color: rgba(255, 255, 255, 0.75);
+.btn-custom-lighten.dropdown-toggle span.caret{
+  color: #fff;
+  border-top: 4px solid #fff;
 }
-.btn-bluegrey {
-  color: #ffffff;
-  font-family:'Josefin Sans', sans-serif;
-  font-size: 18px;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #5b86ab;
-  background-image: -moz-linear-gradient(top, #4f7ca2, #6c95b8);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#4f7ca2), to(#6c95b8));
-  background-image: -webkit-linear-gradient(top, #4f7ca2, #6c95b8);
-  background-image: -o-linear-gradient(top, #4f7ca2, #6c95b8);
-  background-image: linear-gradient(to bottom, #4f7ca2, #6c95b8);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff4f7ca2', endColorstr='#ff6c95b8', GradientType=0);
-  border-color: #6c95b8 #6c95b8 #476f91;
-  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #6c95b8;
-  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-}
-.btn-bluegrey:hover,
-.btn-bluegrey:focus,
-.btn-bluegrey:active,
-.btn-bluegrey.active,
-.btn-bluegrey.disabled,
-.btn-bluegrey[disabled] {
-  color: #ffffff;
-  background-color: #6c95b8;
-  *background-color: #5b89af;
-}
-.btn-bluegrey:active,
-.btn-bluegrey.active {
-  background-color: #4f7ca2 ;
-}
-
-
 
 // FOOTER INFO ############################################################
 #footer{

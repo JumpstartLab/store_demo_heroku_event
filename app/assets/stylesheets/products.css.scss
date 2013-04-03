@@ -5,6 +5,11 @@
 .products {
   text-align: center;
   color: #395974;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 60px;
+
+  
 }
 
 .content {
@@ -58,4 +63,9 @@
 
 #onsale{
   color:#b61435;
+  display: inline;
+}
+
+#saleprice{
+  display: inline;
 }

@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     if @user.save
+      Mailer.welcome_email(@user).deliver
       auto_login(@user)
       redirect_to root_url, :notice => "Welcome, #{@user.full_name}"
     else

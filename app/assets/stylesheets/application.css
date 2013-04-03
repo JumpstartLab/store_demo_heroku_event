@@ -16,3 +16,38 @@
 #shopping_cart_summary {
   float: right;
 }
+
+/* This is the sidebar nav used for user account and admin stuff*/
+.nav-list li.nav-header{
+  color: #b61435;
+}
+
+.nav-list li a {
+  color: rgb(57, 89, 116) ;
+}
+
+.nav-list li.active a {
+  background-color: #b61435;
+  color:#fff;
+}
+
+.nav-list li.active a:hover {
+  background-color: rgb(57, 89, 116);
+  color: #fff;
+}
+/* Color Tabs in Admin Dashboard*/
+.nav-pills li{
+  margin: 0 3px 0 3px;
+}
+.nav-pills a{
+  color: rgb(57, 89, 116);
+  border: 1px solid #b61435;
+}
+
+.nav-pills li.active a{
+  background-color: #b61435;
+}
+.nav-pills li.active a:hover{
+  background-color: rgb(57, 89, 116);
+  border: 1px solid rgb(57, 89, 116);
+}

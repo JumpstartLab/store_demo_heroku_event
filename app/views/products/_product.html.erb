@@ -2,13 +2,12 @@
   <div class="products span3 offset1">
     <p><%= image_tag product.image.url(:thumb) %></p>
     <h3><%= product.title.capitalize %></h3>
+
     <% if product.on_sale? %>
       <p id="onsale"><b><%= t('product.onsale') %></b></p>
-      <p><%= t('product.originalprice') %>: <strike><%= number_to_currency(product.price) %></strike></p>
-      <p><%= t('product.percentsavings') %>: <%= product.percent_off %>%</p>
-      <p><%= t('product.saleprice') %>: <%= number_to_currency(product.sale_price) %></p>
+        <p id="saleprice"><%= t('product.saleprice') %>: <%= number_to_currency(product.sale_price) %></p>
     <% else %>
-      <h6><%= t('product.price') %>: <%= number_to_currency(product.price) %></h6>
+      <p><%= t('product.price') %>: <%= number_to_currency(product.price) %></p>
     <% end %>
   </div>
 <% end %>
