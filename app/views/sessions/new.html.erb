@@ -4,7 +4,6 @@
   <%= simple_form_for :sessions, :url => sessions_path, method: 'POST' do |f| %>
       <%= f.input :email, input_html: { placeholder: t('placeholder.session.email') } %>
       <%= f.input :password %>
-      <%= f.input :remember_me, as: :boolean, inline_label: t('remember'), label: false %>
       <%= f.button :submit, t('navigation.login') %>
   <% end %>
 

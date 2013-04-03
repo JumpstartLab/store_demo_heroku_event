@@ -1,8 +1,7 @@
 <%= link_to product_path(product) do %>
-  <div class="products span3 offset1">
-    <p><%= image_tag product.image.url(:thumb) %></p>
-    <h3><%= product.title.titleize %></h3>
-
+  <div class="products span3">
+    <p><%= image_tag product.image.url(:thumbnail) %></p>
+    <h5><%= product.title.titleize %></h5>
     <% if product.on_sale? %>
       <p id="onsale"><b><%= t('product.onsale') %></b></p>
         <p id="saleprice"><%= t('product.saleprice') %>: <%= number_to_currency(product.sale_price) %></p>
