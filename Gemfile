@@ -9,6 +9,11 @@ gem 'simple_form'
 gem 'jquery-rails'
 gem 'sorcery'
 gem 'paperclip'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
+group :production do
+  gem 'pg'
+end
 
 group :production do
   gem 'pg'
@@ -29,7 +34,6 @@ group :development, :test do
   gem 'debugger'
   gem 'capybara'
   gem 'simplecov'
-  gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 end
 
 group :test do
