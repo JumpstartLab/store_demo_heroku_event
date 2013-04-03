@@ -24,12 +24,6 @@ module Search
     end
   end
 
-# Model.where(
-#     'created_at >= :five_days_ago or updated_at >= :three_days_ago',
-#     :five_days_ago  => Time.now - 5.days,
-#     :three_days_ago => Time.now - 3.days
-# )
-
   def self.filter_admin_orders(params={})
     order = Order.includes(:user)
     if params[:status].present? && params[:status] != 'all'
