@@ -16,7 +16,7 @@ describe 'Search' do
         fill_in 'product-search', with: 'Sweat'
         click_button 'Search'
         expect(page).to have_xpath("//a[@href='#{product_path(@product)}']")
-        expect(page).to have_xpath("//a[@href='#{product_path(@product2)}']")
+        expect(page).to_not have_xpath("//a[@href='#{product_path(@product2)}']")
         expect(page).to_not have_xpath("//a[@href='#{product_path(@product3)}']")
         expect(page).to_not have_xpath("//a[@href='#{product_path(@product4)}']")
       end
@@ -43,7 +43,7 @@ describe 'Search' do
           fill_in 'product-search', with: 'Sweat'
           click_button 'Search'
           expect(page).to have_xpath("//a[@href='#{product_path(@product)}']")
-          expect(page).to have_xpath("//a[@href='#{product_path(@product2)}']")
+          expect(page).to_not have_xpath("//a[@href='#{product_path(@product2)}']")
           expect(page).to_not have_xpath("//a[@href='#{product_path(@product3)}']")
           expect(page).to_not have_xpath("//a[@href='#{product_path(@product4)}']")
         end
@@ -61,11 +61,11 @@ describe 'Search' do
           visit account_orders_path
           fill_in 'order-search', with: 'Sweat'
           click_button 'Search'
-          expect(page).to have_css('tr', count: 2)
+          expect(page).to have_content(@order.id)
           visit account_orders_path
-          fill_in 'order-search', with: 'splinter'
+          fill_in 'order-search', with: 'Splinter'
           click_button 'Search'
-          expect(page).to have_css('tr', count: 1)
+          expect(page).to have_content(@order2.id)
         end
       end
     end

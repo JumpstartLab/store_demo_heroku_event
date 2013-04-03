@@ -8,10 +8,6 @@ describe UsersController do
     end
   end
 
-  describe "POST#create" do
-    pending
-  end
-
   describe "GET#show" do
     context 'when a user is logged in' do
 

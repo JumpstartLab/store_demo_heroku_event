@@ -1,25 +1,24 @@
 require 'spec_helper'
 
 describe OrdersController do
-
-  describe 'new' do
-    it 'returns the page for a new order' do
-      order = Order.create(user_id: 1, status: "pending")
-      get :new
-      assigns(:order).should eq @order
+  describe 'create' do
+    it 'fails to creates an order without a stripeToken' do
+      user = FactoryGirl.create(:user)
+      product = FactoryGirl.create(:product)
+      login_user user
+      session[:cart] = {product.id.to_s => '1'}
+      post :create
+      expect(response).to_not be_success
     end
   end
 
-  describe 'create' do
-    it 'creates an order' do
-      pending
-      # user = FactoryGirl.create(:user)
-      # product = FactoryGirl.create(:product)
-      # product2= FactoryGirl.create(:product, title: 'stuff')
-      # login_user user
-      # session[:cart] = {product.id => '2', product2.id=>'3'}
-      # post :create
-      # response.should redirect_to user_order_path
+  describe 'buy_now' do
+    it 'fails to create an order without a stripeToken' do
+      user = FactoryGirl.create(:user)
+      product = FactoryGirl.create(:product)
+      login_user user
+      post :buy_now, order: product.id
+      expect(response).to_not be_success
     end
   end
 
@@ -68,15 +67,6 @@ describe OrdersController do
           login_user user
           get :show, params = {id: order.id}
           assigns(order).should eq @order
-        end
-
-        it 'populates a table of order items for that order' do
-          pending
-          # user = FactoryGirl.create(:user)
-          # order = FactoryGirl.create(:order, user: user)
-          # login_user user
-          # get :show, params = {id: order.id}
-          # expect(response).to have_content("Order #")
         end
       end
 

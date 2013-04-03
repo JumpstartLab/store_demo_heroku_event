@@ -56,7 +56,6 @@ describe 'the admin products view', type: :feature do
   it 'can destroy an existing product' do
     product = FactoryGirl.create(:product)
     page.driver.submit :delete, admin_product_path(product), {}
-    # visit admin_product_path(product, method: :delete)
     expect(Product.all).to eq []
   end
 
