@@ -1,20 +1,20 @@
 # StoreEngine
 
-## Welcome to Frank's Creatures Shop, a faux online store
+## Welcome to Frank's Monsterporium, a faux online store
 
-Frank's Creatures Shop has the best selection, nay, the ONLY selection of Frank's awesome creations on the web.
+Frank's Monsterporium has the best selection, nay, the ONLY selection of Frank's awesome creations on the web.
 
 This project was created for the gSchool StoreEngine Project. The background for this project can be found at: http://tutorials.jumpstartlab.com/projects/store_engine.html
 
 #####Extensions Completed for This Project:
-Transaction Processor
+Put Items on Sale, Product Reviews, Search, Transaction Processor
 
 #####Bonus Work on This Project:
 _shhhhhh_
 
 ### View the Live Site:
 
-LIVESITE GOES HERE
+http://franks-monsterporium.herokuapp.com/
 
 
 ### Installing Frank's Creatures Shop on your computer:

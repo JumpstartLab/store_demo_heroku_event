@@ -4,7 +4,10 @@ class SessionsController < ApplicationController
 
   def create
     session_params = params[:sessions]
-    user = login(session_params[:email], session_params[:password], session_params[:remember_me])
+    user = login(session_params[:email],
+                 session_params[:password],
+                 session_params[:remember_me]
+                 )
     if user
       redirect_to session[:return_to] || :back, notice: 'Logged in!'
     else

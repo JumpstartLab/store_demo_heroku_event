@@ -9,7 +9,8 @@ class ApplicationController < ActionController::Base
     elsif current_user.admin == true
       true
     else
-      redirect_to login_path, :alert => "Only system administrators may access this page"
+      redirect_to login_path,
+      :alert => "Only system administrators may access this page"
     end
   end
 

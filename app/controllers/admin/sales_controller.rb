@@ -15,7 +15,10 @@ class Admin::SalesController < ApplicationController
     foreign_key = params[:foreign_key].tr('^0-9', '').to_i
     group = params[:foreign_key].tr('^A-Za-z', '')
     percent_off = params[:percent_off].to_i
-    @sale = Sale.new(foreign_key: foreign_key, group: group, percent_off: percent_off, status: 'active')
+    @sale = Sale.new(foreign_key: foreign_key,
+                     group: group, percent_off: percent_off,
+                     status: 'active'
+                     )
     if @sale.save
       redirect_to admin_sales_path, :notice => "Successfully created sale."
     else

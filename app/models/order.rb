@@ -7,7 +7,7 @@ class Order < ActiveRecord::Base
   validates :user_id, presence: true
 
   validates :status, presence: true,
-                     inclusion: { in: %w(pending cancelled paid shipped returned),
+                    inclusion: {in: %w(pending cancelled paid shipped returned),
                                   message: "%{value} is not a valid status" }
 
   def self.create_and_charge(params)
