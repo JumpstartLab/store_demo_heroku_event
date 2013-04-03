@@ -7,13 +7,15 @@ require File.expand_path('../config/application', __FILE__)
 StoreEngine::Application.load_tasks
 
 begin
-  require 'rspec/core/rake_task'
+  require "rspec/core/rake_task"
 
-  task :default => :spec
-
-  RSpec::Core::RakeTask.new("spec:acceptance") do |t|
+  desc "Run all examples"
+  RSpec::Core::RakeTask.new(:spec) do |t|
+    t.rspec_opts = %w[--color]
     t.rspec_opts = "--tag acceptance"
+    t.pattern = 'spec/*_spec.rb'
   end
+rescue LoadError
 end
 
 namespace :sanitation do

@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'pg'
 gem 'jquery-rails'
 gem 'rake'
 gem 'unicorn'
@@ -10,6 +9,11 @@ gem 'simple_form'
 gem 'jquery-rails'
 gem 'sorcery'
 gem 'paperclip'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
+group :production do
+  gem 'pg'
+end
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -26,7 +30,6 @@ group :development, :test do
   gem 'debugger'
   gem 'capybara'
   gem 'simplecov'
-  gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 end
 
 group :test do
