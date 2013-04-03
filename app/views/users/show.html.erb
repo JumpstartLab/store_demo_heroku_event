@@ -2,13 +2,8 @@
   <%= render partial: 'user_navigation', :locals => { active: :account_details } %>
 
   <div class="span8">
-    <h1><%= @user.display_name || @user.full_name %> <%= t('details') %></h1>
-    <hr>
-
-    <p><%= t('account.email') %>: <%= @user.email %></p>
-    <p><%= t('account.fullname') %>:<%= @user.full_name %></p>
-    <p><%= t('account.displayname') %>: <%= @user.display_name %> </p>
-
+    <h1><%= @user.display_name || @user.full_name %></h1>
+    <h3><%= t('account.edit')%></h3>
     <hr>
 
     <h5><%= t('account.edit') %></h5>
