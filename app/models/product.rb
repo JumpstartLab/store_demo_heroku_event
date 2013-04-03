@@ -41,18 +41,41 @@ class Product < ActiveRecord::Base
   end
 
   def percent_of_original
-    product_sales = Sale.where(group: 'product').where(status: 'active').where(foreign_key: self.id)
-    percent_of_product = product_sales.map { |product_sale| (100 - product_sale.percent_off) / BigDecimal.new(100) }.inject(BigDecimal.new(1)) do |memo, percent_of_total|
-        memo = memo * percent_of_total
-        memo
-      end
     if category_ids.present?
-      category_sales = Sale.where(group: 'category').where(status: 'active').where(foreign_key: category_ids)
-      percent_of_category = category_sales.map { |category_sale| (100 - category_sale.percent_off) / BigDecimal.new(100) }.inject(BigDecimal.new(1)) do |memo, percent_of_total|
-        memo = memo * percent_of_total
-        memo
-      end
+      percent_of_category = category_sales.map do |category_sale|
+                        (100 - category_sale.percent_off) / BigDecimal.new(100)
+                      end.inject(BigDecimal.new(1)) do |memo, percent_of_total|
+                            memo = memo * percent_of_total
+                            memo
+                          end
     end
-    category_ids.present? ? percent_of_product * percent_of_category : percent_of_product
+    if category_ids.present?
+      percent_of_product * percent_of_category
+    else
+      percent_of_product
+    end
+  end
+
+  def product_sales
+    Sale.where(group: 'product').
+         where(status: 'active').
+         where(foreign_key: self.id)
+  end
+
+  def percent_of_product
+    sales_products = product_sales.map do |product_sale|
+      (100 - product_sale.percent_off) / BigDecimal.new(100)
+    end
+
+    sales_products.inject(BigDecimal.new(1)) do |memo, percent_of_total|
+      memo = memo * percent_of_total
+      memo
+    end
+  end
+
+  def category_sales
+    Sale.where(group: 'category').
+         where(status: 'active').
+         where(foreign_key: category_ids)
   end
 end

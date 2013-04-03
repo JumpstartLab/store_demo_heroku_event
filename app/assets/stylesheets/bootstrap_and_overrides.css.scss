@@ -1,13 +1,16 @@
 @import "bootstrap";
 body {
   padding-top: 60px;
-  background: url('wood.jpg') repeat fixed center;
+  background: url('blurbg.png') repeat fixed center;
+  //background-color: #5685ac;
+  color: #395974;
+  font-family: 'Josefin Slab', serif;
+  font-size: 100%;
 }
 @import "bootstrap-responsive";
 
 
 // Nav Bar
-
 .logo-pic {
   float: left;
 }
@@ -26,7 +29,7 @@ body {
 .navbar a.brand {
   font-size: 250%;
   font-family: 'Josefin Sans', sans-serif;
-  color: #779f29;
+  color: #b61435;
   padding-top:18px;
 }
 
@@ -47,7 +50,7 @@ body {
 .span12 hr {
   height: 30px;
   border-style: solid;
-  border-color: #000000;
+  border-color: #b61435;
   border-width: 1px 0 0 0;
   border-radius: 20px;
 }
@@ -58,7 +61,7 @@ body {
   height: 30px;
   margin-top: -31px;
   border-style: solid;
-  border-color: #000000;
+  border-color: #b61435;
   border-width: 0 0 1px 0;
   border-radius: 20px;
 }
@@ -66,24 +69,23 @@ body {
 
 //Change the Cart Button Color, Can recreate at http://http://twitterbootstrapbuttons.w3masters.nl/
 
-
 .btn-custom-lighten.active {
   color: rgba(255, 255, 255, 0.75);
 }
 .btn-custom-lighten {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #1ba854;
-  background-image: -moz-linear-gradient(top, #18964b, #1fc261);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#18964b), to(#1fc261));
-  background-image: -webkit-linear-gradient(top, #18964b, #1fc261);
-  background-image: -o-linear-gradient(top, #18964b, #1fc261);
-  background-image: linear-gradient(to bottom, #18964b, #1fc261);
+  background-color: #c8163a;
+  background-image: -moz-linear-gradient(top, #b61435, #e41942);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#b61435), to(#e41942));
+  background-image: -webkit-linear-gradient(top, #b61435, #e41942);
+  background-image: -o-linear-gradient(top, #b61435, #e41942);
+  background-image: linear-gradient(to bottom, #b61435, #e41942);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff18964b', endColorstr='#ff1fc261', GradientType=0);
-  border-color: #1fc261 #1fc261 #148040;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffb61435', endColorstr='#ffe41942', GradientType=0);
+  border-color: #e41942 #e41942 #9f112e;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #1fc261;
+  *background-color: #e41942;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
@@ -95,10 +97,71 @@ body {
 .btn-custom-lighten.disabled,
 .btn-custom-lighten[disabled] {
   color: #ffffff;
-  background-color: #1fc261;
-  *background-color: #1cac56;
+  background-color: #e41942;
+  *background-color: #cd173c;
 }
 .btn-custom-lighten:active,
 .btn-custom-lighten.active {
-  background-color: #18964b ;
+  background-color: #b61435 ;
+}
+
+//SEARCH AND CATEGORY BUTTON ##############################################
+.btn-custom-lighten.active {
+  color: rgba(255, 255, 255, 0.75);
+}
+.btn-bluegrey {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #5b86ab;
+  background-image: -moz-linear-gradient(top, #4f7ca2, #6c95b8);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#4f7ca2), to(#6c95b8));
+  background-image: -webkit-linear-gradient(top, #4f7ca2, #6c95b8);
+  background-image: -o-linear-gradient(top, #4f7ca2, #6c95b8);
+  background-image: linear-gradient(to bottom, #4f7ca2, #6c95b8);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff4f7ca2', endColorstr='#ff6c95b8', GradientType=0);
+  border-color: #6c95b8 #6c95b8 #476f91;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #6c95b8;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+}
+.btn-bluegrey:hover,
+.btn-bluegrey:focus,
+.btn-bluegrey:active,
+.btn-bluegrey.active,
+.btn-bluegrey.disabled,
+.btn-bluegrey[disabled] {
+  color: #ffffff;
+  background-color: #6c95b8;
+  *background-color: #5b89af;
+}
+.btn-bluegrey:active,
+.btn-bluegrey.active {
+  background-color: #4f7ca2 ;
+}
+
+
+
+// FOOTER INFO ############################################################
+#footer{
+  height: 40px;
+  width: 100%;
+  position: relative;
+  top: 40px;
+  bottom: 0px;
+  left: 0px;
+  text-align: center;
+  line-height: 40px;
+}
+
+#footer a{
+  color: #EAE2CF;
+}
+#footer a:hover{
+  color:  #b61435;
+}
+#footer #github {
+  max-width: 50%;
 }

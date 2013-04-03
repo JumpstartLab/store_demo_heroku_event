@@ -29,7 +29,7 @@ fr:
     displayname: "Nom d'afficher"
     create: 'Créer un nouveau compte'
     details: 'Détails du compte'
-    edit: 'Modifier le compte'
+    edit: 'Modifier'
     update: 'Mise à jour'
   time:
     asof: 'à partir de'

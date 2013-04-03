@@ -1,7 +1,7 @@
 <div class="product-index">
   <section class="row">
     <div class="btn-group span1" id="homepage-category-dropdown">
-      <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+      <a class="btn btn-bluegrey dropdown-toggle" data-toggle="dropdown" href="#">
         <%= t 'categories.select' %>
         <span class="caret"></span>
       </a>
@@ -19,7 +19,7 @@
 
     <form action="<%= products_path %>" method="get" class="form-search">
       <input type="text" id="product-search" value="<%= params[:search] %>" name="search" class="input-medium search-query">
-      <button type="submit" class="btn"><%= t 'navigation.search' %></button>
+      <button type="submit" class="btn btn-bluegrey"><%= t 'navigation.search' %></button>
     </form>
   </section>
 

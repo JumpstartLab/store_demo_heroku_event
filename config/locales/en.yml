@@ -33,7 +33,7 @@ en:
     displayname: 'Display Name'
     create: 'Create a New Account'
     details: 'Account Details'
-    edit: 'Edit Account'
+    edit: 'Edit'
     update: 'Update Account'
   time:
     asof: 'as of'
@@ -50,7 +50,7 @@ en:
     confirmlogout: 'Are you sure? This will clear your cart'
     add: 'Add to Cart'
   store:
-    name: "Frank's-Monsterporium"
+    name: "Frank's Monsterporium"
   confirm: 'Are you sure?'
   checkout: 'Checkout'
   purchase: 'Purchase'
