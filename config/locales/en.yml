@@ -141,8 +141,8 @@ en:
     status: 'Order Status'
     actualvalue: 'Actual Value'
     discounts: 'Discounts'
-    purchasername: 'Purchaser name'
-    purchaseremail: 'Purchaser email'
+    purchasername: 'Purchaser Name'
+    purchaseremail: 'Purchaser Email'
     status:
       pending: 'Pending'
       cancelled: 'Cancelled'
