@@ -1,6 +1,7 @@
 StoreEngine::Application.routes.draw do
   root to: 'products#index'
 
+  get "/code" => redirect("http://github.com/raphweiner/store_engine")
   get "/logout" => "sessions#destroy", :as => "logout"
   get "/login" => "sessions#new", :as => "login"
   get "/signup" => "users#new", :as => "signup"

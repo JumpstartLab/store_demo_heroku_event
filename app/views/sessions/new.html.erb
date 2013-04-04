@@ -5,7 +5,7 @@
       <%= f.input :email, input_html: { placeholder: t('placeholder.session.email') } %>
       <%= f.input :password %>
       <%= f.input :remember_me, as: :boolean, inline_label: t('remember'), label: false %>
-      <%= f.button :submit, t('navigation.login') %>
+      <%= f.button :submit, t('navigation.login'), class:"btn btn-custom-lighten" %>
   <% end %>
 
   <%= link_to t('account.create'), signup_path %>

@@ -21,7 +21,7 @@
         <h5>Total: <%= number_to_currency(current_cart.total) %></h5>
         <%= render partial: 'checkout_button',
                    locals: { price: current_cart.total } %>
-        <%= button_to t('cart.empty'), cart_path, class: 'btn', method: :delete %>
+        <%= button_to t('cart.empty'), cart_path, class: 'btn btn-warning', method: :delete %>
       </div>
   <% end %>
 </div>

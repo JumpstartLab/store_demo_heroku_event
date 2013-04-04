@@ -34,6 +34,7 @@ class ApplicationController < ActionController::Base
     case session[:i18n]
     when 'fr' then 'fr'
     when 'cs' then 'cs'
+    when 'ca' then 'ca'
     else 'us'
     end
   end

@@ -6,6 +6,10 @@
 </div>
 <div class="nav-buttons">
   <ul class="nav pull-right">
+    <% if logged_in? && current_user.admin? %>
+    <li><%= link_to t('admin.self'), admin_dashboard_path %></li>
+    <% end %>
+
     <% if logged_in? %>
         <li><%= render 'layouts/logout_button' %></li>
         <li><%= link_to t('navigation.account'), account_path %></li>
