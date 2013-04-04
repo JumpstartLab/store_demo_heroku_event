@@ -2,7 +2,7 @@ class Admin::ProductsController < ApplicationController
   before_filter :require_admin
 
   def index
-    @products = Product.all
+    @products = Product.order('created_at DESC').all
   end
 
   def new

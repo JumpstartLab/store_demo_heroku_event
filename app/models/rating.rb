@@ -9,7 +9,7 @@ class Rating < ActiveRecord::Base
 
   def display_name
     user = User.find(user_id)
-    user.display_name || 'Anonymous'
+    user.display_name.present? ? user.display_name : 'Anonymous'
   end
 
   def editable?
