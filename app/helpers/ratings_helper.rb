@@ -1,7 +1,8 @@
 module RatingsHelper
   def average_rating(ratings)
     stars = ratings.map { |rating| rating.stars }.inject(&:+)
-    ((BigDecimal.new(stars) / BigDecimal.new(ratings.count)) * 2).round / 2.0
+    ((BigDecimal.new(stars.to_s) / BigDecimal.new(ratings.count.to_s)) * 2).
+      round / 2.0
   end
 
   def user_purchased?(user, product)

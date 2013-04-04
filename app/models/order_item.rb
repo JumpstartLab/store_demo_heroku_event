@@ -22,10 +22,10 @@ class OrderItem < ActiveRecord::Base
 
 
   def subtotal
-    BigDecimal.new(self.selling_price) * BigDecimal.new(self.quantity)
+    BigDecimal.new(selling_price.to_s) * BigDecimal.new(quantity.to_s)
   end
 
   def total_discount
-    (self.unit_price - self.selling_price) * BigDecimal.new(self.quantity)
+    (unit_price.to_s - selling_price.to_s) * BigDecimal.new(quantity.to_s)
   end
 end

@@ -27,6 +27,6 @@ class CartItem
   end
 
   def total
-    BigDecimal.new(quantity) * BigDecimal.new(selling_price)
+    BigDecimal.new(quantity.to_s) * BigDecimal.new(selling_price.to_s)
   end
 end
