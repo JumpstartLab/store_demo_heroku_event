@@ -100,11 +100,11 @@ order1.order_items.create(product_id: product2.id,
                           percent_off: product2.percent_off,
                           quantity: 1)
 
-order2.order_items.create(product_id: product3.id,
-                          unit_price: product3.price,
-                          selling_price: product3.current_price,
-                          percent_off: product3.percent_off,
-                          quantity: 4)
+order2.order_items.create(product_id: product2.id,
+                          unit_price: product2.price,
+                          selling_price: product2.current_price,
+                          percent_off: product2.percent_off,
+                          quantity: 1)
 
 order3.order_items.create(product_id: product4.id,
                           unit_price: product4.price,

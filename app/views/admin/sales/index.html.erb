@@ -1,26 +1,27 @@
-<%= render partial: 'shared/admin_navigation', :locals => { active: :sales }  %>
+<div class="admin-sales-index">
+  <%= render partial: 'shared/admin_navigation', :locals => { active: :sales }  %>
 
-<div class="span8">
-  <h1>Sales</h1>
-  <hr>
+  <div class="span8">
+    <h1>Sales</h1>
+    <hr>
 
-  <div class="pull-right">
-  <%= button_to 'Create Sale', new_admin_sale_path, method: :get, class: 'btn btn-large btn-custom-lighten' %>
+    <div class="pull-right">
+    <%= button_to 'Create Sale', new_admin_sale_path, method: :get, class: 'btn btn-large btn-custom-lighten' %>
+    </div>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Product/Category</th>
+          <th>Percent Off</th>
+          <th>Created At</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @sales %>
+      </tbody>
+    </table>
   </div>
-
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Product/Category</th>
-        <th>Percent Off</th>
-        <th>Created At</th>
-        <th>Status</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render @sales %>
-    </tbody>
-  </table>
-
 </div>
