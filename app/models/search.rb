@@ -42,7 +42,7 @@ module Search
     if params[:email].present?
       order = order.where("email = ?", params[:email])
     end
-    orders = order.all
+    orders = order.order('created_at DESC').all
     if params[:price_symbol].present? && params[:price].present?
       orders = orders.select do |order|
         order.total > (BigDecimal.new(params[:price]) / 100)

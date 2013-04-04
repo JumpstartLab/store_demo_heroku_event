@@ -21,7 +21,7 @@ class Product < ActiveRecord::Base
   end
 
   def on_sale?
-    percent_of_original != 1
+    percent_of_original.to_i != 1
   end
 
   def current_price

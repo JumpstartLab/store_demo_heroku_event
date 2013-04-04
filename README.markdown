@@ -16,7 +16,6 @@ _shhhhhh_
 
 http://franks-monsterporium.herokuapp.com/
 
-
 ### Installing Frank's Creatures Shop on your computer:
 
 Once you've git cloned this repo, make sure to run
