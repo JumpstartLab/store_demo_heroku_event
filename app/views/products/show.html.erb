@@ -8,9 +8,10 @@
     <div id="product-categories">
       <b><%= t('categories.self') %>:</b>
       <% @product.categories.each do |category| %>
-          <p><%= category.title %></p>
+          <a href='/products/?category_id=<%= category.id %>'><span class="label"><%= category.title %></span></a>
       <% end %>
     </div>
+    <br>
     <% if @product.on_sale? %>
       <p><b><%= t('product.onsale') %></b></p>
       <p><%= t('product.originalprice') %>: <strike><%= number_to_currency(@product.price) %></strike></p>

@@ -83,6 +83,10 @@ order3 = Order.create(status: 'shipped', user_id: 1)
 order4 = Order.create(status: 'cancelled', user_id: 2)
 order5 = Order.create(status: 'returned', user_id: 2)
 order6 = Order.create(status: 'pending', user_id: 3)
+order7 = Order.create(status: 'paid', user_id: 3)
+order8 = Order.create(status: 'shipped', user_id: 3)
+order9 = Order.create(status: 'pending', user_id: 3)
+order10 = Order.create(status: 'returned', user_id: 3)
 
 order1.order_items.create(product_id: product1.id,
                           unit_price: product1.price,
