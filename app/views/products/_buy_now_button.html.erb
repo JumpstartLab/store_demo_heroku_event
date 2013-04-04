@@ -11,5 +11,5 @@
 
   <% end %>
 <% else %>
-  <%= button_to t('product.buynow'), redirect_to: login_path, method: :get, class: 'btn' %>
+  <%= button_to t('product.buynow'), login_path, class: 'btn btn-primary', method: :get %>
 <% end %>

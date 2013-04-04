@@ -25,6 +25,9 @@
 .nav-list li a {
   color: rgb(57, 89, 116) ;
 }
+.nav-list li a:hover {
+  color: #b61435;
+}
 
 .nav-list li.active a {
   background-color: #b61435;

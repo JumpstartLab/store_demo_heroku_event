@@ -23,6 +23,8 @@ Once you've git cloned this repo, make sure to run
 
 ```bundle install```
 
+```rake db:create```
+
 ```rake db:migrate```
 
 ```rake db:seed``` to load the products

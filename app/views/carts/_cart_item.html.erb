@@ -15,7 +15,7 @@
     <%= simple_form_for :carts, url: '/cart', method: :put do |f| %>
       <%= f.hidden_field :product_id, value: cart_item.product.id %>
       <%= f.input_field :quantity, value: cart_item.quantity, class: 'span1' %>
-      <%= f.button :submit, t('crud.update') %>
+      <%= f.button :submit, t('crud.update'), class:'btn btn-info' %>
     <% end %>
   </td>
 </tr>
