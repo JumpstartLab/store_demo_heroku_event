@@ -5,7 +5,9 @@
 
     <h1><%= t('order.self') %> #<%= @order.id %></h1>
     <p><%= t('model.createdat') %>: <%= @order.created_at.to_s(:short) %></p>
-    <p><%= t('model.status') %>: <%= @order.status %> <%= t('time.asof') %> <%=@order.updated_at.to_s(:short) %></p>
+    <span class="label default"><%= @order.status %></span> <%= t('time.asof') %> <%=@order.updated_at.to_s(:short) %>
+    <br>
+    <br>
 
     <table class="table table-striped">
       <thead>

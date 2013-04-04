@@ -3,7 +3,7 @@
 
   <div class="span8">
     <h1><%= t 'order.self' %> #<%= @order.id %></h1>
-    <p><%= t 'model.status' %> <%= @order.status %></p>
+    <span class="label default"><%= @order.status %></span>
     <%= render partial: 'next_status_button', locals: { order: @order } %>
     <hr>
     <p><%= t 'model.createdat' %>: <%= @order.created_at.to_s(:short) %></p>
