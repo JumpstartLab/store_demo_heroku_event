@@ -1,0 +1,1 @@
+Paperclip::Attachment.default_options[:url] = 'http://s3.amazonaws.com/c3po_store_engine'

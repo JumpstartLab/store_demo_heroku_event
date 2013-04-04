@@ -11,6 +11,7 @@ gem 'sorcery'
 gem 'paperclip'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'pg'
+gem 'aws-sdk'
 
 group :production do
   gem 'pg'
