@@ -4,10 +4,9 @@ Dear <%= @user.display_name.titleize %>,
 Thanks so much for your purchase of:
 <br>
 <% @order.order_items.each do |order_item| %>
-<%= order_item.quantity %>x <%= order_item.title %> (full resolution image: <%= order_item.product.image.url(:large) %>)
+<%= order_item.quantity %>x <%= order_item.title %>
 <br>
 <% end %>
-<br>
 <br>
 We've processed your payment for <%= number_to_currency(@order.total) %>.
 <br>
