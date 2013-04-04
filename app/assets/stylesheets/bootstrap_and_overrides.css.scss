@@ -1,7 +1,6 @@
 @import "bootstrap";
 body {
   padding-top: 60px;
-  //background: url('blurbg.png') repeat fixed center;
   background-color: #5685ac;
   color: #395974;
   font-family: 'Tahoma', sans-serif;
@@ -39,6 +38,7 @@ body {
 .navbar .navbar-inner{
   background: url('texture.jpg') repeat fixed center;
 }
+
 //Use this to change the height of the navbar -- may push over the main content
 .navbar .nav{
   height:50px;
@@ -97,6 +97,13 @@ hr {
   color: #fff;
   border-top: 4px solid #fff;
 }
+
+
+.btn-group.open .btn.dropdown-toggle{
+  background-color:#b61435;
+}
+
+
 
 // FOOTER INFO ############################################################
 #footer{
