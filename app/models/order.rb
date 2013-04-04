@@ -3,12 +3,20 @@ class Order < ActiveRecord::Base
   belongs_to :user
   has_many :order_items, dependent: :destroy
   has_many :products, through: :order_items
-
   validates :user_id, presence: true
-
   validates :status, presence: true,
                     inclusion: {in: %w(pending cancelled paid shipped returned),
                                   message: "%{value} is not a valid status" }
+
+  scope :by_email, lambda {|email| where("email = ?", email) if email.present?}
+
+  def self.by_status(status)
+    if status.present? && status != 'all'
+      order.where(status: status)
+    else
+      scoped
+    end
+  end
 
   def self.create_and_charge(params)
     order = create(status: 'pending', user_id: params[:user].id)

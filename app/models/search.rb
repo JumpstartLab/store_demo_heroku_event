@@ -25,24 +25,30 @@ module Search
 
   def self.filter_admin_orders(params={})
     order = Order.includes(:user)
-    if params[:status].present? && params[:status] != 'all'
-      order = order.where(status: params[:status])
-    end
+    order = order.by_status(params[:status])
+    order = order.by_email(params[:email])
+    order = filter_date(order, params)
+    filter_price_and_execute_sql(order, params)
+  end
+
+  def self.filter_date(order, params)
     if params[:date_symbol].present? && params[:date].present?
       date = params[:date].split('-').map{ |char| char.to_i }
       if params[:date_symbol] == '<' || params[:date_symbol] == '>'
-        order = order.where("orders.created_at #{params[:date_symbol]}= ?",
+        order.where("orders.created_at #{params[:date_symbol]}= ?",
                             params[:date])
       elsif params[:date_symbol] == '='
-        order = order.where("orders.created_at >= ? and orders.created_at <= ?",
+        order.where("orders.created_at >= ? and orders.created_at <= ?",
           DateTime.new(date[0], date[1], date[2]),
           DateTime.new(date[0]+1, date[1], date[2]))
       end
+    else
+      order
     end
-    if params[:email].present?
-      order = order.where("email = ?", params[:email])
-    end
-    orders = order.order('created_at DESC').all
+  end
+
+  def self.filter_price_and_execute_sql(order, params)
+    orders = order.order('orders.created_at DESC').all
     if params[:price_symbol].present? && params[:price].present?
       orders = orders.select do |order|
         order.total > (BigDecimal.new(params[:price].to_s) / 100)
