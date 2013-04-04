@@ -49,7 +49,7 @@ describe 'new user creates and edits account' do
       fill_in "Email", with: 'poetry@poetry.com'
       fill_in "Password", with: "poet"
       click_button "Login"
-      expect(current_path).to eq login_path
+      expect(current_path).to eq root_path
       click_link_or_button "Logout"
       expect(current_path).to eq root_path
       expect(page).to have_content "Logged out!"

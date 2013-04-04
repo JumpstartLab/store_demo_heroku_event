@@ -8,7 +8,7 @@ describe "admin dashboard" do
       fill_in 'sessions_password', with: 'password'
       click_button 'Login'
 
-      @user = FactoryGirl.create(:user, email: 'wtfz')
+      @user = FactoryGirl.create(:user, email: 'wtfz@whatthefuckzzzz.com')
       FactoryGirl.create(:order, user: @user, status: 'paid')
       FactoryGirl.create(:order, user: @user, status: 'paid')
       FactoryGirl.create(:order, user: @user, status: 'returned')
