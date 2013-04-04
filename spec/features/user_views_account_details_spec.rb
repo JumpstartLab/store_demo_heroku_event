@@ -15,6 +15,13 @@ describe 'user account detail view' do
       expect(page).to have_content("Account")
     end
 
+    it 'cannot update their profile with incorrect information' do
+      visit 'account'
+      fill_in 'Full Name', with: ''
+      click_button 'Update Account'
+      expect(page).to have_content("can't be blank")
+    end
+
     context 'when they click the link to their order history page' do
       it 'takes them to their order history page' do
         visit 'account/'

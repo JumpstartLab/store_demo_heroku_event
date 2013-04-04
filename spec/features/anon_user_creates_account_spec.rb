@@ -8,7 +8,7 @@ describe 'new user creates and edits account' do
     fill_in "Display Name", with: 'poet'
     fill_in "Password", with: 'poet'
     fill_in "Password Confirmation", with: 'poet'
-    click_button "Sign Up"
+    click_button "Submit"
   end
 
   describe 'registering a new account' do
@@ -31,7 +31,7 @@ describe 'new user creates and edits account' do
         fill_in "Display Name", with: 'poet'
         fill_in "Password", with: 'poet'
         fill_in "Password Confirmation", with: 'poet'
-        click_button "Sign Up"
+        click_button "Submit"
         expect(page).to have_content "has already been taken"
         expect(current_path).to eq '/users'
       end

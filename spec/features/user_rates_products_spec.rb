@@ -22,7 +22,7 @@ describe 'user rates product' do
       fill_in 'Title', with: 'Love it'
       fill_in 'Body', with: 'Get it get it get itttt'
       select '4', from: 'Stars'
-      click_button 'Create Rating'
+      click_button 'Submit'
       expect(page).to have_content('Love it')
     end
 
@@ -31,7 +31,7 @@ describe 'user rates product' do
       click_link 'Rate this product'
       fill_in 'Body', with: 'Get it get it get itttt'
       select '4', from: 'Stars'
-      click_button 'Create Rating'
+      click_button 'Submit'
       expect(page).to have_content("can't be blank")
     end
 
@@ -41,7 +41,7 @@ describe 'user rates product' do
       visit edit_product_rating_path(product, rating)
       expect(page).to have_content('Edit your rating of')
       fill_in 'Title', with: 'CHANGED MY MIND!'
-      click_button 'Create Rating'
+      click_button 'Submit'
       expect(current_path).to eq account_ratings_path
     end
 
@@ -51,7 +51,7 @@ describe 'user rates product' do
       visit edit_product_rating_path(product, rating)
       expect(page).to have_content('Edit your rating of')
       fill_in 'Title', with: ''
-      click_button 'Create Rating'
+      click_button 'Submit'
       expect(page).to have_content("can't be blank")
     end
   end

@@ -24,7 +24,7 @@ describe 'the admin products view', type: :feature do
     fill_in "Description", with: 'blah blah blah'
     fill_in "Price", with: '1.99'
     choose('active')
-    click_button "Create Product"
+    click_button "Submit"
     expect(current_path).to eq '/admin/products'
   end
 
@@ -33,7 +33,7 @@ describe 'the admin products view', type: :feature do
     fill_in "Description", with: 'blah blah blah'
     fill_in "Price", with: '1.99'
     choose('active')
-    click_button "Create Product"
+    click_button "Submit"
     expect(page).to have_content("can't be blank")
   end
 
@@ -41,7 +41,7 @@ describe 'the admin products view', type: :feature do
     product = FactoryGirl.create(:product)
     visit edit_admin_product_path(product)
     fill_in "Title", with: "whateveryouwant"
-    click_button "Create Product"
+    click_button "Submit"
     expect(current_path).to eq admin_products_path
   end
 
@@ -49,7 +49,7 @@ describe 'the admin products view', type: :feature do
     product = FactoryGirl.create(:product)
     visit edit_admin_product_path(product)
     fill_in "Title", with: ""
-    click_button "Create Product"
+    click_button "Submit"
     expect(page).to have_content("can't be blank")
   end
 

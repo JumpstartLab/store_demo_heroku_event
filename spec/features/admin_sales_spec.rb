@@ -17,7 +17,7 @@ describe "admin dashboard" do
     click_button 'Create Sale'
     select 'Princess', from: 'foreign_key'
     fill_in 'percent_off', with: '10'
-    click_button 'Create Sale'
+    click_button 'Submit'
     expect(current_path).to eq admin_sales_path
   end
 
@@ -25,7 +25,7 @@ describe "admin dashboard" do
     click_button 'Create Sale'
     select 'Princess', from: 'foreign_key'
     fill_in 'percent_off', with: '1000'
-    click_button 'Create Sale'
+    click_button 'Submit'
     expect(current_path).to eq admin_sales_path
   end
 
