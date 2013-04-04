@@ -3,7 +3,7 @@ module Search
     if params[:category_id].present?
       Category.find(params[:category_id]).products.where(status: 'active')
     elsif params[:search].present?
-      Product.where("title LIKE ? OR description LIKE ?",
+      Product.where("title ILIKE ? OR description ILIKE ?",
                     "%#{params[:search]}%",
                     "%#{params[:search]}%").where(status: 'active')
     else
@@ -14,7 +14,7 @@ module Search
   def self.filter_user_orders(user_id, params={})
     orders = Order.where(user_id: user_id).all
     if params[:search].present?
-      products = Product.where("title LIKE ? OR description LIKE ?",
+      products = Product.where("title ILIKE ? OR description ILIKE ?",
                                "%#{params[:search]}%",
                                "%#{params[:search]}%")
       orders.select { |order| (order.products & products).present? }
