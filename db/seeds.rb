@@ -2,8 +2,6 @@ User.create(full_name: "Franklin Webber", email: "demoXX+franklin@jumpstartlab.c
 User.create(full_name: "Jeff", email: "demoXX+jeff@jumpstartlab.com", password: "password", display_name: "j3")
 User.create(full_name: "Steve Klabnik", email: "demoXX+steve@jumpstartlab.com", password: "password", display_name: "SkrilleX", admin: true)
 
-
-
 file = File.open('./public/images/creatures/stickers/bobby-02.png')
 product1 = Product.create(title: "Bobby", description: "Marcy's triplet brother. He's kind of smelly.", price: 14.19, status: 'active', image: file)
 file.close
@@ -70,6 +68,14 @@ Category.create(title: "Mystics", product_ids: [3, 4, 6, 10, 11, 15, 17, 18, 20]
 Category.create(title: "Bunnies", product_ids: [3, 17])
 Category.create(title: "Brutes", product_ids: [19, 20, 11])
 Category.create(title: "Miscellaneous", product_ids: [2, 9, 16, 4, 15, 18])
+
+Sale.create(status: 'active', group: 'product', foreign_key: 1, percent_off: 50)
+Sale.create(status: 'active', group: 'category', foreign_key: 3, percent_off: 25)
+
+Rating.create(user_id: 3, product_id: 3, title: 'Awesome!', body: "Gotta love this one. It's like Kirby but with better ears!", stars: 4)
+Rating.create(user_id: 1, product_id: 3, title: 'Meh...', body: 'Just a Kirby knock-off.', stars: 2)
+Rating.create(user_id: 2, product_id: 1, title: 'Cool', body: "I'm happy with my purchase", stars: 3)
+Rating.create(user_id: 1, product_id: 1, title: 'Bought two!', body: 'Fantastic', stars: 5)
 
 order1 = Order.create(status: 'pending', user_id: 1)
 order2 = Order.create(status: 'paid', user_id: 1)
