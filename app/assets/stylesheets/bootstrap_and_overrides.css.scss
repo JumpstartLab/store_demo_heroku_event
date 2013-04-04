@@ -1,11 +1,12 @@
 @import "bootstrap";
 body {
   padding-top: 60px;
-  background-color: #5685ac;
+  background-color: rgba(68, 117, 123, 0.32);
   color: #395974;
   font-family: 'Tahoma', sans-serif;
   font-size: 100%;
 }
+
 @import "bootstrap-responsive";
 
 // Nav Bar
@@ -36,7 +37,7 @@ body {
 }
 
 .navbar .navbar-inner{
-  background: url('texture.jpg') repeat fixed center;
+  //background: url('texture.jpg') repeat fixed center;
 }
 
 //Use this to change the height of the navbar -- may push over the main content
