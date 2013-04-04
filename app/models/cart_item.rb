@@ -15,7 +15,7 @@ class CartItem
   end
 
   def selling_price
-    product.current_price
+    product.current_price.round(2)
   end
 
   def percent_off

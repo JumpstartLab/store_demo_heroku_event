@@ -25,7 +25,7 @@ StoreEngine::Application.routes.draw do
   end
 
   resources :users, only: [ :new, :create, :update ] do
-    resources :orders
+    resources :orders, except: [ :show ]
   end
 
   namespace :admin do

@@ -1,6 +1,6 @@
 <%= simple_form_for [:admin, @product], html: {multipart: true} do |f| %>
   <% if @product.image.exists? %>
-    <%= image_tag @product.image.url(:medium) %><br/>
+    <%= image_tag @product.image.url(:large) %><br/>
   <% end %>
   <%= f.label :image, t('product.image.attach') %><br />
   <%= f.file_field :image %>

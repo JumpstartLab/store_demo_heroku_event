@@ -19,8 +19,12 @@
     <% else %>
       <p><%= t('product.price') %>: <%= number_to_currency(@product.price) %></p>
     <% end %>
-    <%= render partial: 'add_to_cart_button', locals: {product: @product} %>
-    <%= render partial: 'buy_now_button', locals: {product: @product} %>
+    <% if @product.status == 'active' %>
+      <%= render partial: 'add_to_cart_button', locals: {product: @product} %>
+      <%= render partial: 'buy_now_button', locals: {product: @product} %>
+    <% else %>
+      <p> Product is retired! </p>
+    <% end %>
     <%= render 'user_rating_status_or_action' %>
     <% if @ratings.present? %>
         <div class="average-rating">
