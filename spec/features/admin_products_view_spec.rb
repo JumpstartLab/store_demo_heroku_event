@@ -7,7 +7,7 @@ describe 'the admin products view', type: :feature do
     fill_in 'sessions_email', with: 'logan@gmail.com'
     fill_in 'sessions_password', with: 'password'
     click_button 'Login'
-     visit admin_products_path
+    visit admin_products_path
   end
 
   it 'should have a title' do
@@ -61,16 +61,14 @@ describe 'the admin products view', type: :feature do
 
   it 'can retire an active product' do
     product = FactoryGirl.create(:product)
-    page.driver.post retire_admin_product_path(product)
+    page.driver.post toggle_status_admin_product_path(product)
     expect(product.status).to eq 'active'
   end
 
   it 'can activate a retired product' do
     product = FactoryGirl.create(:product)
-    page.driver.post activate_admin_product_path(product)
+    page.driver.post toggle_status_admin_product_path(product)
     expect(product.status).to eq 'active'
   end
-
-
 end
 

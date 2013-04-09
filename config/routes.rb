@@ -44,8 +44,7 @@ StoreEngine::Application.routes.draw do
 
     resources :products do
       member do
-        post :retire
-        post :activate
+        post :toggle_status
       end
     end
 

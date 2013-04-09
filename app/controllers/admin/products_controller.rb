@@ -13,7 +13,7 @@ class Admin::ProductsController < ApplicationController
     @product = Product.new(params[:product])
     if @product.save
       redirect_to admin_products_path,
-      :notice => "Successfully created product."
+        :notice => "Successfully created product."
     else
       render :action => 'new', :notice  => "Product creation failed."
     end
@@ -27,7 +27,7 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find(params[:id])
     if @product.update_attributes(params[:product])
       redirect_to admin_products_path,
-      :notice  => "Successfully updated product."
+        :notice  => "Successfully updated product."
     else
       render :action => 'edit', :notice  => "Update failed."
     end
@@ -37,24 +37,14 @@ class Admin::ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.destroy
     redirect_to admin_products_url,
-    :notice => "Successfully destroyed product."
+      :notice => "Successfully destroyed product."
   end
 
-  def retire
+  def toggle_status
     @product = Product.find(params[:id])
-    if @product.retire
+    if @product.toggle_status
       redirect_to admin_products_path,
-      :notice  => "Successfully retired product."
-    else
-      head 400
-    end
-  end
-
-  def activate
-    @product = Product.find(params[:id])
-    if @product.activate
-      redirect_to admin_products_path,
-      :notice  => "Successfully activated product."
+        :notice  => "Product status successfully set to '#{@product.status}'."
     else
       head 400
     end

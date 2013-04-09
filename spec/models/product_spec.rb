@@ -56,24 +56,21 @@ describe Product do
     expect(example.image_file_name).to eq 'rails.png'
   end
 
-  describe '.retire' do
+  describe '.toggle_status' do
     context 'on an active product' do
       it 'sets the status from active to retired' do
         product = FactoryGirl.create(:product, status: 'active')
-        product.retire
+        product.toggle_status
         expect(product.status).to eq 'retired'
       end
     end
-  end
 
-  describe '.activate' do
     context 'on a retired product' do
       it 'sets the statusto active' do
         product = FactoryGirl.create(:product, status: 'retired')
-        product.activate
+        product.toggle_status
         expect(product.status).to eq 'active'
       end
     end
   end
-
 end

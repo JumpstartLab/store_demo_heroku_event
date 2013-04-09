@@ -16,7 +16,7 @@ describe 'Search' do
         fill_in 'product-search', with: 'Sweat'
         click_button 'Search'
         expect(page).to have_xpath("//a[@href='#{product_path(@product)}']")
-        expect(page).to_not have_xpath("//a[@href='#{product_path(@product2)}']")
+        expect(page).to have_xpath("//a[@href='#{product_path(@product2)}']")
         expect(page).to_not have_xpath("//a[@href='#{product_path(@product3)}']")
         expect(page).to_not have_xpath("//a[@href='#{product_path(@product4)}']")
       end
@@ -43,7 +43,7 @@ describe 'Search' do
           fill_in 'product-search', with: 'Sweat'
           click_button 'Search'
           expect(page).to have_xpath("//a[@href='#{product_path(@product)}']")
-          expect(page).to_not have_xpath("//a[@href='#{product_path(@product2)}']")
+          expect(page).to have_xpath("//a[@href='#{product_path(@product2)}']")
           expect(page).to_not have_xpath("//a[@href='#{product_path(@product3)}']")
           expect(page).to_not have_xpath("//a[@href='#{product_path(@product4)}']")
         end

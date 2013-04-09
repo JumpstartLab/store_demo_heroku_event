@@ -37,13 +37,12 @@ class Product < ActiveRecord::Base
   format: { with: /^\d+??(?:\.\d{0,2})?$/ },
   numericality: { greater_than: 0 }
 
-
-  def retire
-    self.update_attributes(status: 'retired')
-  end
-
-  def activate
-    self.update_attributes(status: 'active')
+  def toggle_status
+    if status == 'active'
+      update_attributes(status: 'retired')
+    elsif status == 'retired'
+      update_attributes(status: 'active')
+    end
   end
 
   def on_sale?
