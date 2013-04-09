@@ -105,6 +105,13 @@ ca:
   admin:
     self: 'Admin'
     dashboard: 'Dashboard'
+  sale:
+    collection: 'Sales, eh'
+    end: 'End Sale, eh'
+    activate: 'Activate Sale, eh'
+    create: 'Create Sale, eh'
+    productcategory: 'Product/Category, eh'
+    percentoff: 'Percent Off, eh'
   product:
     self: 'Product, eh'
     collection: 'Products, eh'

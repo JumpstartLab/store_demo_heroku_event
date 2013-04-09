@@ -14,11 +14,11 @@ class Sale < ActiveRecord::Base
     group.classify.constantize.find(foreign_key)
   end
 
-  def end
-    self.update_attributes(status: 'ended')
-  end
-
-  def activate
-    self.update_attributes(status: 'active')
+  def toggle_status
+    if status == 'active'
+      update_attributes(status: 'ended')
+    elsif status == 'ended'
+      update_attributes(status: 'active')
+    end
   end
 end

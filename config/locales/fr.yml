@@ -101,6 +101,13 @@ fr:
   admin:
     self: 'Admin'
     dashboard: 'Tableau de Bord'
+  sale:
+    collection: 'Ventes'
+    end: 'Terminer Vente'
+    activate: 'Activer Vente'
+    create: 'Créer Vente'
+    productcategory: 'Produit/Catégorie'
+    percentoff: 'Réduction'
   product:
     self: 'Produit'
     collection: 'Produits'

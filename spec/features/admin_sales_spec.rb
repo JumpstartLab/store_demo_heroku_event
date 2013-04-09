@@ -31,13 +31,13 @@ describe "admin dashboard" do
 
   it 'can end an active sale' do
     sale = FactoryGirl.create(:sale, group: 'product', foreign_key: 1)
-    page.driver.post end_admin_sale_path(sale)
+    page.driver.post toggle_status_admin_sale_path(sale)
     expect(sale.status).to eq 'active'
   end
 
   it 'can activate an ended sale' do
     sale = FactoryGirl.create(:sale, group: 'product', foreign_key: 1)
-    page.driver.post activate_admin_sale_path(sale)
+    page.driver.post toggle_status_admin_sale_path(sale)
     expect(sale.status).to eq 'active'
   end
 

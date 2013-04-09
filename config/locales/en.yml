@@ -105,6 +105,13 @@ en:
   admin:
     self: 'Admin'
     dashboard: 'Dashboard'
+  sale:
+    collection: 'Sales'
+    end: 'End Sale'
+    activate: 'Activate Sale'
+    create: 'Create Sale'
+    productcategory: 'Product/Category'
+    percentoff: 'Percent Off'
   product:
     self: 'Product'
     collection: 'Products'

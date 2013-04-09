@@ -102,6 +102,13 @@ cs:
   admin:
     self: 'NOMNOMNOM'
     dashboard: 'NOMNOMNOM'
+  sale:
+    collection: 'BLARGHY'
+    end: 'BLARGHNOM'
+    activate: 'NOMBLARGH'
+    create: 'NOMNOM'
+    productcategory: 'NOMY/NOM'
+    percentoff: 'BLARNOM'
   product:
     self: 'NOMNOMNOM'
     collection: 'NOMNOMNOM'

@@ -5,12 +5,21 @@
   <td><%= sale.status %></td>
   <td>
     <div class="btn-group">
-      <button class="btn dropdown-toggle" data-toggle="dropdown"><%= t('model.modify') %> <span class="caret"></span></button>
+      <button class="btn dropdown-toggle" data-toggle="dropdown">
+        <%= t('model.modify') %> <span class="caret"></span>
+      </button>
       <ul class="dropdown-menu">
-        <%= render partial: 'ended_active_button', locals: { sale: sale } %>
+        <li>
+          <%= link_to activate_or_end_translation(sale.status),
+                      toggle_status_admin_sale_path(sale),
+                      :method => :post %>
+        </li>
         <li class="divider"></li>
         <li>
-          <%= link_to t('crud.delete'), admin_sale_path(sale), confirm: t('confirm'), method: :delete %>
+          <%= link_to t('crud.delete'),
+                      admin_sale_path(sale),
+                      confirm: t('confirm'),
+                      method: :delete %>
         </li>
       </ul>
     </div>

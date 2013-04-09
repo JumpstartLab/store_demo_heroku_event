@@ -2,7 +2,7 @@ class Admin::SalesController < ApplicationController
   before_filter :require_admin
 
   def index
-    @sales = Sale.all
+    @sales = Sale.order('created_at DESC').all
   end
 
   def new
@@ -28,17 +28,12 @@ class Admin::SalesController < ApplicationController
     end
   end
 
-  def end
+  def toggle_status
     @sale = Sale.find(params[:id])
-    if @sale.end
-      redirect_to admin_sales_path, :notice  => "Successfully ended sale."
-    end
-  end
-
-  def activate
-    @sale = Sale.find(params[:id])
-    if @sale.activate
-      redirect_to admin_sales_path, :notice  => "Successfully activated sale."
+    if @sale.toggle_status
+      redirect_to admin_sales_path, :notice  => "Sale set to '#{@sale.status}'"
+    else
+      head 400
     end
   end
 
