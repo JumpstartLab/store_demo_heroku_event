@@ -24,11 +24,11 @@ module Search
   end
 
   def self.filter_admin_orders(params={})
-    order = Order.includes(:user)
-    order = order.by_status(params[:status])
-    order = order.by_email(params[:email])
-    order = filter_date(order, params)
-    filter_price_and_execute_sql(order, params)
+    orders = Order.includes(:user)
+                  .by_status(params[:status])
+                  .by_email(params[:email])
+    orders = filter_date(orders, params)
+    filter_price_and_execute_sql(orders, params)
   end
 
   def self.filter_date(order, params)
@@ -47,8 +47,8 @@ module Search
     end
   end
 
-  def self.filter_price_and_execute_sql(order, params)
-    orders = order.order('orders.created_at DESC').all
+  def self.filter_price_and_execute_sql(orders, params)
+    orders = orders.order('orders.created_at DESC').all
     if params[:price_symbol].present? && params[:price].present?
       orders = orders.select do |order|
         order.total > (BigDecimal.new(params[:price].to_s) / 100)
