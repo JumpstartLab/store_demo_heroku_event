@@ -11,10 +11,8 @@ gem 'sorcery'
 gem 'paperclip'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'pg'
-
-group :production do
-  gem 'pg'
-end
+gem 'kaminari'
+gem 'newrelic_rpm'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -30,7 +28,7 @@ group :development, :test do
   gem 'debugger'
   gem 'capybara'
   gem 'simplecov'
-  gem 'newrelic_rpm'
+  gem 'ruby-progressbar'
 end
 
 group :test do

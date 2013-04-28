@@ -105,6 +105,9 @@ GEM
     json (1.7.7)
     jwt (0.1.8)
       multi_json (>= 1.5)
+    kaminari (0.14.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     kgio (2.8.0)
     launchy (2.2.0)
       addressable (~> 2.3)
@@ -187,6 +190,7 @@ GEM
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
       rspec-mocks (~> 2.13.0)
+    ruby-progressbar (1.0.2)
     ruby2ruby (2.0.3)
       ruby_parser (~> 3.1)
       sexp_processor (~> 4.0)
@@ -252,6 +256,7 @@ DEPENDENCIES
   faker
   guard-rspec
   jquery-rails
+  kaminari
   launchy
   newrelic_rpm
   paperclip
@@ -260,6 +265,7 @@ DEPENDENCIES
   rake
   reek
   rspec-rails
+  ruby-progressbar
   sass-rails (~> 3.2.3)
   simple_form
   simplecov
