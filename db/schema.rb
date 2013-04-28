@@ -50,14 +50,11 @@ ActiveRecord::Schema.define(:version => 20130402201518) do
   create_table "products", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.decimal  "price",              :precision => 8, :scale => 2
+    t.decimal  "price",       :precision => 8, :scale => 2
     t.string   "status"
-    t.datetime "created_at",                                       :null => false
-    t.datetime "updated_at",                                       :null => false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
+    t.string   "image_path"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
 
   create_table "ratings", :force => true do |t|

@@ -138,8 +138,7 @@ en:
       retired: 'Retired'
       activate: 'Activate'
       retire: 'Retire'
-    image:
-      attach: 'Attach a new image'
+    image_path: 'Attach a new image'
   order:
     self: 'Order'
     collection: 'Orders'

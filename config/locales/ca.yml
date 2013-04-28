@@ -138,8 +138,7 @@ ca:
       retired: 'Retired, eh'
       activate: 'Activate, eh'
       retire: 'Retire, eh'
-    image:
-      attach: 'Attach a new image, eh'
+    image_path: 'Image path, eh'
   order:
     self: 'Order'
     collection: 'Orders'

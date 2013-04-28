@@ -1,6 +1,6 @@
 <% current_cart.items.each do |cart_item| %>
 <tr>
-  <td><%= image_tag cart_item.product.image.url(:thumbnail) %></td>
+  <td><%= image_tag cart_item.product.image_path %></td>
   <td>
     <%= link_to cart_item.title, product_path(cart_item.product) %>
     <br>

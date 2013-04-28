@@ -51,11 +51,6 @@ describe Product do
     expect(product.categories.count).to eq 2
   end
 
-  it "includes Paperclip correctly" do
-    example = Product.new :image => File.new(Rails.root + 'spec/fixtures/images/rails.png')
-    expect(example.image_file_name).to eq 'rails.png'
-  end
-
   describe '.toggle_status' do
     context 'on an active product' do
       it 'sets the status from active to retired' do

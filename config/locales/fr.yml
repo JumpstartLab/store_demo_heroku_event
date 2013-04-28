@@ -134,8 +134,7 @@ fr:
       retired: 'Retraité'
       activate: 'Activer'
       retire: 'Se retirer'
-    image:
-      attach: 'Attachez une nouvelle image'
+    image_path: 'Image URL'
   order:
     self: 'Commande'
     collection: 'Commandes'

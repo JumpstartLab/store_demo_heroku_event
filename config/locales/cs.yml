@@ -135,8 +135,7 @@ cs:
       retired: 'NOMNOMNOM'
       activate: 'NOMNOMNOM'
       retire: 'NOMNOMNOM'
-    image:
-      attach: 'derpdibleependern'
+    image_path: 'derpdibleependern'
   order:
     self: 'Oggahdfaaaa'
     collection: 'NOMNOMNOM'

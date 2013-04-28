@@ -24,9 +24,11 @@ class Payment
   end
 
   def charge_stripe
-    Stripe::Charge.create(:amount => price,
-                          :currency => "usd",
-                          :card => token,
-                          :description => email)
+    if StoreConfig.charging?
+      Stripe::Charge.create(:amount => price,
+                            :currency => "usd",
+                            :card => token,
+                            :description => email)
+    end
   end
 end

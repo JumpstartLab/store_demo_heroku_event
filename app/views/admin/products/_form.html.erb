@@ -1,8 +1,5 @@
 <%= simple_form_for [:admin, @product], html: {multipart: true} do |f| %>
-  <% if @product.image.exists? %>
-    <%= image_tag @product.image.url(:large) %><br/>
-  <% end %>
-  <%= f.label :image, t('product.image.attach') %><br />
+  <%= f.label :image_path, t('product.image_path') %><br />
   <%= f.file_field :image %>
   <%= f.input :title, input_html: { placeholder: t('placeholder.product.title') } %>
   <%= f.input :description, input_html: { placeholder: t('placeholder.product.description') } %>

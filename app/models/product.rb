@@ -1,12 +1,6 @@
 class Product < ActiveRecord::Base
-  attr_accessible :title, :description, :price, :status, :category_ids, :image
+  attr_accessible :title, :description, :price, :status, :category_ids, :image_path
   has_and_belongs_to_many :categories
-
-  # has_attached_file :image, styles: { retail: "500x500",
-  #                                     large: "500x500",
-  #                                     thumbnail: "200x200" },
-  #                                     storage: :local,
-  #                           path: ":attachment/:id/:style.:extension",
 
   validates :title, presence: :true,
                     uniqueness: { case_sensitive: false }
