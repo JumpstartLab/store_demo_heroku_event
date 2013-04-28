@@ -11,7 +11,6 @@ gem 'sorcery'
 gem 'paperclip'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'pg'
-gem 'aws-sdk'
 
 group :production do
   gem 'pg'
@@ -31,6 +30,7 @@ group :development, :test do
   gem 'debugger'
   gem 'capybara'
   gem 'simplecov'
+  gem 'newrelic_rpm'
 end
 
 group :test do

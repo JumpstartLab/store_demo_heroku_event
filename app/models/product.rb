@@ -2,16 +2,11 @@ class Product < ActiveRecord::Base
   attr_accessible :title, :description, :price, :status, :category_ids, :image
   has_and_belongs_to_many :categories
 
-  has_attached_file :image, styles: { retail: "500x500",
-                                      large: "500x500",
-                                      thumbnail: "200x200" },
-                            storage: :s3,
-                            bucket: 'c3po_store_engine',
-                            path: ":attachment/:id/:style.:extension",
-                            s3_credentials: {
-                              access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-                              secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
-                              }
+  # has_attached_file :image, styles: { retail: "500x500",
+  #                                     large: "500x500",
+  #                                     thumbnail: "200x200" },
+  #                                     storage: :local,
+  #                           path: ":attachment/:id/:style.:extension",
 
   validates :title, presence: :true,
                     uniqueness: { case_sensitive: false }
