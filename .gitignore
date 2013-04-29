@@ -23,3 +23,6 @@
 # simplecov coverage folder
 /coverage
 .env
+
+db/monster_development
+db/monster_test
