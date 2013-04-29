@@ -7,7 +7,7 @@ module Search
     else
       Product.scoped
     end
-    scope.active.page(params[:page] || 1).per(24)
+    scope.active
   end
 
   def self.filter_user_orders(user_id, params={})

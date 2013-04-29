@@ -12,7 +12,6 @@ gem 'paperclip'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'sqlite3'
 # gem 'pg'
-gem 'kaminari'
 gem 'newrelic_rpm'
 
 group :assets do
