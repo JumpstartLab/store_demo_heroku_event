@@ -11,6 +11,12 @@ class Product < ActiveRecord::Base
                     format: { with: /^\d+??(?:\.\d{0,2})?$/ },
                     numericality: { greater_than: 0 }
 
+  scope :by_recency, order('created_at desc')
+  scope :active, where(status: 'active')
+  scope :for_term, lambda { |term|
+      where("title ILIKE ? OR description ILIKE ?", "%#{term}%", "%#{term}%")
+  }
+
   def toggle_status
     if status == 'active'
       update_attributes(status: 'retired')

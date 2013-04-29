@@ -1,14 +1,13 @@
 module Search
   def self.filter_products(params = {})
-    if params[:category_id].present?
-      Category.find(params[:category_id]).products.where(status: 'active')
+    scope = if params[:category_id].present?
+      Category.find(params[:category_id]).products
     elsif params[:search].present?
-      Product.where("title ILIKE ? OR description ILIKE ?",
-                    "%#{params[:search]}%",
-                    "%#{params[:search]}%").where(status: 'active')
+      Product.for_term(params[:search])
     else
-      Product.find_all_by_status('active')
+      Product.scoped
     end
+    scope.active
   end
 
   def self.filter_user_orders(user_id, params={})
