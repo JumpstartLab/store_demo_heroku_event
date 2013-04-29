@@ -16,11 +16,12 @@ Clone the repository, then run:
 bundle install
 cp db/monster_demo db/monster_development
 bundle exec rake db:test:prepare
+bundle exec unicorn
 ```
 
 #### Using PostgreSQL
 
-First edit the `Gemfile` to uncomment the `pg` line, and comment out the
+**First edit the `Gemfile`** to uncomment the `pg` line, and comment out the
 `sqlite3` line.
 
 ```bash
@@ -30,8 +31,7 @@ createuser -sdR monster
 createdb -O monster monster_development
 psql -U monster -d monster_development -f db/monster_development.pgdump
 bundle exec rake db:test:prepare
+bundle exec unicorn
 ```
 
-### In The Browser
-
-Then, to view the site from your computer, you can then run ```unicorn``` to view it at http://localhost:8080.
+View the website at [localhost:8080](http://localhost:8080).
