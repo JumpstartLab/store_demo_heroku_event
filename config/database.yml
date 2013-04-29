@@ -3,12 +3,14 @@ development:
   database: monster_development
   pool: 5
   timeout: 5000
+  username: monster
 
 test:
   adapter: postgresql
   database: monster_test
   pool: 5
   timeout: 5000
+  username: monster
 
 production:
   adapter: postgresql
