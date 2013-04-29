@@ -13,9 +13,7 @@ module Search
   def self.filter_user_orders(user_id, params={})
     orders = Order.where(user_id: user_id).all
     if params[:search].present?
-      products = Product.where("title ILIKE ? OR description ILIKE ?",
-                               "%#{params[:search]}%",
-                               "%#{params[:search]}%")
+      products = Product.for_term(params[:search])
       orders.select { |order| (order.products & products).present? }
     else
       orders
