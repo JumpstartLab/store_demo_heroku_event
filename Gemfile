@@ -10,7 +10,7 @@ gem 'jquery-rails'
 gem 'sorcery'
 gem 'paperclip'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
-gem 'pg'
+gem 'sqlite3'
 gem 'kaminari'
 gem 'newrelic_rpm'
 

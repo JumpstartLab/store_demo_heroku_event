@@ -1,12 +1,12 @@
 development:
-  adapter: postgresql
-  database: monster_development
+  adapter: sqlite3
+  database: db/monster_development
   pool: 5
   timeout: 5000
 
 test:
-  adapter: postgresql
-  database: monster_test
+  adapter: sqlite3
+  database: db/monster_test
   pool: 5
   timeout: 5000
 
