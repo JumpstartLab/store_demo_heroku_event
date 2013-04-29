@@ -37,7 +37,7 @@ describe Search do
     end
 
     it 'returns the matching orders based on title and description' do
-      expect(Search.filter_user_orders(@user.id, {search: 'sweat'}).count).to eq 2
+      expect(Search.filter_user_orders(@user.id, {search: 'SWeaT'}).count).to eq 2
     end
 
     it 'returns all orders if no search term given' do

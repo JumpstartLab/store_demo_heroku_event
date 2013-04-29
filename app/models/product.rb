@@ -14,7 +14,7 @@ class Product < ActiveRecord::Base
   scope :by_recency, order('created_at desc')
   scope :active, where(status: 'active')
   scope :for_term, lambda { |term|
-      where("title ILIKE ? OR description ILIKE ?", "%#{term}%", "%#{term}%")
+      where("lower(title) LIKE ? OR lower(description) LIKE ?", "%#{term.downcase}%", "%#{term.downcase}%")
   }
 
   def toggle_status
