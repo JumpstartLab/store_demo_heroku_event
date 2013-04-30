@@ -6,8 +6,8 @@ describe 'new user creates and edits account' do
     fill_in "Full Name", with: 'Maya Angelou'
     fill_in "Email", with: 'poetry@poetry.com'
     fill_in "Display Name", with: 'poet'
-    fill_in "Password", with: 'poet'
-    fill_in "Password Confirmation", with: 'poet'
+    fill_in "user_password", with: 'poet'
+    fill_in "user_password_confirmation", with: 'poet'
     click_button "Submit"
   end
 
@@ -29,8 +29,8 @@ describe 'new user creates and edits account' do
         fill_in "Full Name", with: 'NOT MAYA'
         fill_in "Email", with: 'poetry@poetry.com'
         fill_in "Display Name", with: 'poet'
-        fill_in "Password", with: 'poet'
-        fill_in "Password Confirmation", with: 'poet'
+        fill_in "user_password", with: 'poet'
+        fill_in "user_password_confirmation", with: 'poet'
         click_button "Submit"
         expect(page).to have_content "has already been taken"
         expect(current_path).to eq '/users'
