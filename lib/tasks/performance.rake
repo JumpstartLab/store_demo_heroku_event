@@ -1,6 +1,5 @@
 require './store_config'
 require 'benchmark'
-require 'rspec'
 
 def setup_database
   puts "Copying the development database to the test database"
@@ -8,6 +7,7 @@ def setup_database
 end
 
 def run_performance_tests
+  require 'rspec'
   setup_database
   puts "Running the performance suite against #{ ENV['PERFORMANCE_TARGET'] }"
   time = Benchmark.measure do
