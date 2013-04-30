@@ -14,21 +14,6 @@
   </div>
 
   <div class="control-group">
-    <label class="control-label">Price</label>
-    <div class="controls">
-      <select id='admin-order-search-price-symbol' name="price_symbol" class="input-mini">
-        <option <%= 'selected' if params[:price_symbol] == '>' %>>></option>
-        <option <%= 'selected' if params[:price_symbol] == '<' %>><</option>
-        <option <%= 'selected' if params[:price_symbol] == '=' %>>=</option>
-      </select>
-      <div class="input-append">
-        <input class="span1" id="admin-order-search-price" name="price" value="<%= params[:price] %>" type="text" placeholder="10000">
-        <span class="add-on">¢</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="control-group">
     <label class="control-label">Date</label>
     <div class="controls">
       <select id='admin-order-search-date-symbol' name="date_symbol" class="input-mini">

@@ -93,10 +93,8 @@ describe 'Search' do
     end
 
     context 'from the order admin tab' do
-      it 'can query for status, (>,<,=) total price, (>,<,=) date, and purchaser email' do
+      it 'can query for status, (>,<,=) date, and purchaser email' do
         select 'shipped', from: 'admin-order-search-status'
-        select '>', from: 'admin-order-search-price-symbol'
-        fill_in 'admin-order-search-price', with: '100'
         select '=', from: 'admin-order-search-date-symbol'
         fill_in 'admin-order-search-email', with: 'raphael@example.com'
         click_button 'Search Orders'
