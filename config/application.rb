@@ -75,5 +75,8 @@ module StoreEngine
 
     # Set logger to STDOUT for Unicorn logging
     config.logger = Logger.new(STDOUT)
+
+    # Allow asset compilation on Heroku
+    config.assets.initialize_on_precompile = false
   end
 end
