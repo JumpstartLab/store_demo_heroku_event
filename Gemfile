@@ -12,6 +12,7 @@ gem 'paperclip'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'newrelic_rpm'
 gem 'will_paginate'
+gem 'rspec-rails' # Necessary in prod & dev
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -25,7 +26,6 @@ end
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'cane'
   gem 'reek'

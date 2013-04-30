@@ -42,3 +42,19 @@ bundle exec unicorn
 ```
 
 View the website at [localhost:8080](http://localhost:8080).
+
+## Provisioning Heroku
+
+### Create the app
+
+#### Add Add-Ons
+
+```
+heroku addons:add pgbackups
+```
+
+### Load the Starter Data
+
+```
+heroku pgbackups:restore DATABASE 'https://github.com/JumpstartLab/store_demo/blob/master/db/monster_development.pgdump?raw=true'
+```
