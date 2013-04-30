@@ -43,9 +43,11 @@ describe 'the user cart view' do
         visit product_path(product2)
         click_button "Add to Cart"
         visit cart_path
-        fill_in  'carts_quantity', with: '0'
-        click_button 'Update'
-        expect(current_path).to eq cart_path
+        within("#product_#{product2.id}") do
+          fill_in  'carts_quantity', with: '0'
+          click_button 'Update'
+          expect(current_path).to eq cart_path
+        end
       end
     end
   end

@@ -12,7 +12,7 @@ def run_performance_tests
   puts "Running the performance suite against #{ ENV['PERFORMANCE_ROOT'] }"
   time = Benchmark.measure do
     RSpec::Core::Runner.disable_autorun!
-    RSpec::Core::Runner.run(['spec/performance/products_performance_spec.rb'])    
+    RSpec::Core::Runner.run(['spec', '--tag performance'])    
   end
   real_time = time.to_s.scan(/\((.*)\)/).first.first.to_f
   puts ""

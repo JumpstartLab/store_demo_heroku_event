@@ -9,7 +9,7 @@ class Order < ActiveRecord::Base
                                   message: "%{value} is not a valid status" }
 
   scope :by_email, lambda {|email| where("email = ?", email) if email.present?}
-  scope :by_recency, order('created_at desc')
+  scope :by_recency, order('orders.created_at desc')
 
   def self.by_status(status)
     if status.present? && status != 'all'

@@ -1,5 +1,5 @@
 <% current_cart.items.each do |cart_item| %>
-<tr>
+<tr id="product_<%= cart_item.product.id %>">
   <td><%= image_tag cart_item.product.image_path %></td>
   <td>
     <%= link_to cart_item.title, product_path(cart_item.product) %>

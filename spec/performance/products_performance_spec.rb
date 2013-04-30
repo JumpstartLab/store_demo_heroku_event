@@ -6,7 +6,7 @@ def full_url(relative_path)
   ENV['PERFORMANCE_ROOT'] + relative_path
 end
 
-describe "Products Performance", :type => :feature do
+describe "Products Performance", :type => :feature, :performance => true do
   describe "/products" do
     it "loads the products listing" do
       repetitions.times do
