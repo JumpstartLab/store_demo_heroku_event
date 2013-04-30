@@ -2,7 +2,7 @@ class Admin::ProductsController < ApplicationController
   before_filter :require_admin
 
   def index
-    @products = Product.order('created_at DESC').all
+    @products = Product.by_recency.paginate(:page => (params[:page] || 1), :per_page => 24)
   end
 
   def new

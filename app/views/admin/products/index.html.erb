@@ -19,6 +19,9 @@
         <th></th>
       </tr>
       </thead>
+      <tfoot>
+        <%= will_paginate @products %>
+      </tfoot>
       <tbody>
       <%= render @products %>
       </tbody>
