@@ -23,6 +23,9 @@
           <th><%= t 'model.status' %></th>
           <th><%= t 'model.modify' %></th>
           </thead>
+          <tfoot>
+            <%= will_paginate @orders %>
+          </tfoot>
           <tbody>
           <%= render @orders %>
           </tbody>

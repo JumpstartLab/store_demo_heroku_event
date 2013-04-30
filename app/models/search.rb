@@ -25,7 +25,7 @@ module Search
                   .by_status(params[:status])
                   .by_email(params[:email])
     orders = filter_date(orders, params)
-    orders = orders.order('orders.created_at DESC').all
+    orders = orders.order('orders.created_at DESC').paginate(:page => (params[:page] || 1), :per_page => 24)
   end
 
   def self.filter_date(order, params)
