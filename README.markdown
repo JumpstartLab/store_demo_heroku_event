@@ -8,6 +8,13 @@ This project was created for the gSchool StoreEngine Project. The background for
 
 ### Installing Frank's Creatures Shop on your computer:
 
+#### Requirements
+
+* [Ruby 1.9.3](https://rvm.io/)
+* [Bundler](http://gembundler.com/)
+
+The default setup uses SQLite3, but you can also use PostgreSQL.
+
 #### (Default) Using SQLite3
 
 Clone the repository, then run:
