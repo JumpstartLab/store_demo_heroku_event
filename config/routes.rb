@@ -48,6 +48,10 @@ StoreEngine::Application.routes.draw do
 
     resources :orders, only: [ :show, :update ]
     resources :order_items, only: [ :update, :destroy]
-    resources :categories, except: [ :show ]
+    resources :categories, except: [ :show ] do
+      member do
+        get :products
+      end
+    end
   end
 end

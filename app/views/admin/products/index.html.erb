@@ -2,7 +2,13 @@
   <%= render partial: 'shared/admin_navigation', :locals => { active: :products }  %>
 
   <div class="span8">
-    <h1><%= t 'product.collection' %></h1>
+    <h1>
+      <%= t 'product.collection' %>
+      <% if @category %>
+        &ndash;
+        <%= @category %>
+      <% end %>
+    </h1>
     <hr>
 
     <div class="pull-right">

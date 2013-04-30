@@ -2,7 +2,13 @@ class Admin::CategoriesController < ApplicationController
   before_filter :require_admin
 
   def index
-    @categories = Category.all
+    @categories = Category.paginate(page: params[:page] || 1, per_page: 25)
+  end
+
+  def products
+    @category = Category.find(params[:id])
+    @products = @category.products.paginate(page: params[:page] || 1, per_page: 25)
+    render 'admin/products/index'
   end
 
   def new

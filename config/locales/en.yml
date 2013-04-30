@@ -80,6 +80,8 @@ en:
     create: 'Create Category'
     showall: 'Show All'
     noproducts: 'No products assigned'
+    n_products: '%{n} products'
+    see_all_products: 'See all products in this category'
     select: 'Select a Category'
   crud:
     edit: 'Edit'
