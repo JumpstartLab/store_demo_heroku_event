@@ -58,3 +58,10 @@ heroku addons:add pgbackups
 ```
 heroku pgbackups:restore DATABASE 'https://github.com/JumpstartLab/store_demo/blob/master/db/monster_development.pgdump?raw=true'
 ```
+
+### Optional Poltergeist Setup
+
+```
+brew update
+brew install poltergeist
+```

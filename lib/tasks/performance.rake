@@ -9,7 +9,6 @@ end
 def run_performance_tests
   require 'rspec'
 
-  setup_database
   puts "Running the performance suite against #{ ENV['PERFORMANCE_ROOT'] }"
   time = Benchmark.measure do
     RSpec::Core::Runner.disable_autorun!
@@ -23,6 +22,7 @@ end
 namespace :performance do
   desc "Run the performance suite locally"
   task :local => :environment do
+    setup_database
     ENV['PERFORMANCE_ROOT'] = StoreConfig.development_url
     run_performance_tests
   end
@@ -30,7 +30,7 @@ namespace :performance do
   desc "Run the performance suite against production"
   task :production => :environment do
     require 'capybara/poltergeist'
-    Capybara.javascript_driver = :poltergeist
+    Capybara.current_driver = :poltergeist
     ENV['PERFORMANCE_ROOT'] = StoreConfig.production_url
     run_performance_tests
   end
