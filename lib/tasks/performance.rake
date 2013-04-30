@@ -13,13 +13,13 @@ end
 
 namespace :performance do
   desc "Run the performance suite locally"
-  task :local do
+  task :local => :environment do
     ENV['PERFORMANCE_TARGET'] = StoreConfig.development_url
     run_performance_tests
   end
 
   desc "Run the performance suite against production"
-  task :production do
+  task :production => :environment do
     ENV['PERFORMANCE_TARGET'] = StoreConfig.production_url
     run_performance_tests
   end

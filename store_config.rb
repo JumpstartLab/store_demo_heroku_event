@@ -1,4 +1,4 @@
-module StoreConfig
+class StoreConfig
   def self.development_url
     "http://localhost:3000"
   end
