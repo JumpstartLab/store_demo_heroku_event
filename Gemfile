@@ -12,7 +12,7 @@ gem 'paperclip'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'newrelic_rpm'
 gem 'will_paginate'
-gem 'rspec-rails' # Necessary in prod & dev
+gem 'ruby-progressbar'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -25,6 +25,7 @@ group :production do
 end
 
 group :development, :test do
+  gem 'rspec-rails'
   gem 'sqlite3'
   gem 'factory_girl_rails'
   gem 'cane'
@@ -32,7 +33,6 @@ group :development, :test do
   gem 'debugger'
   gem 'capybara'
   gem 'simplecov'
-  gem 'ruby-progressbar'
   gem 'heroku'
   gem 'quiet_assets'
 end
