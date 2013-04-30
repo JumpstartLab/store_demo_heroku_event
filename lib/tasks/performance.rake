@@ -1,12 +1,18 @@
 require './store_config'
 require 'benchmark'
-require 'rspec/core/rake_task'
+require 'rspec'
+
+def setup_database
+  puts "Copying the development database to the test database"
+  `cp db/monster_demo db/monster_test`
+end
 
 def run_performance_tests
+  setup_database
   puts "Running the performance suite against #{ ENV['PERFORMANCE_TARGET'] }"
   time = Benchmark.measure do
-    #Rake::Task['performance:actual_tests'].invoke
-    1000.times{ 2*2 }
+    RSpec::Core::Runner.disable_autorun!
+    RSpec::Core::Runner.run(['spec/performance/products_performance_spec.rb'])    
   end
   puts time
 end
