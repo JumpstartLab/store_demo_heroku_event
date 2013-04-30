@@ -10,8 +10,6 @@ gem 'jquery-rails'
 gem 'sorcery'
 gem 'paperclip'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
-gem 'sqlite3'
-# gem 'pg'
 gem 'newrelic_rpm'
 gem 'will_paginate'
 
@@ -21,7 +19,12 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :production do
+  gem 'pg'
+end
+
 group :development, :test do
+  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'cane'
@@ -30,6 +33,7 @@ group :development, :test do
   gem 'capybara'
   gem 'simplecov'
   gem 'ruby-progressbar'
+  gem 'heroku'
 end
 
 group :test do
