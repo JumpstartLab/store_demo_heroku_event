@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 gem 'jquery-rails'
 gem 'rake'
-gem 'unicorn'
+gem 'puma'
 gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'jquery-rails'
@@ -34,6 +34,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'ruby-progressbar'
   gem 'heroku'
+  gem 'quiet_assets'
 end
 
 group :test do
