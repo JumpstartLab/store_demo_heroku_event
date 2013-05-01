@@ -15,7 +15,7 @@ Clone the repository, then run:
 bundle install
 cp db/monster_demo db/monster_development
 bundle exec rake db:test:prepare
-bundle exec unicorn
+bundle exec rails s Puma
 ```
 
 ### Provisioning Heroku
@@ -58,7 +58,7 @@ createuser -sdR monster
 createdb -O monster monster_development
 psql -U monster -d monster_development -f db/monster_development.pgdump
 bundle exec rake db:test:prepare
-bundle exec unicorn
+bundle exec rails s Puma
 ```
 
 View the website at [localhost:8080](http://localhost:8080).
