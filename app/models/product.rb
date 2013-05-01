@@ -85,6 +85,6 @@ class Product < ActiveRecord::Base
   end
 
   def thumbnail_path
-    image_path.sub("stickers", "thumbnails")
+    image_path.sub("stickers", "thumbnails") if image_path
   end
 end
