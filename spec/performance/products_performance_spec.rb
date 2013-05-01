@@ -3,14 +3,15 @@ require 'spec_helper'
 repetitions = 10
 
 def full_url(relative_path)
-  ENV['PERFORMANCE_ROOT'] + relative_path
+  url = ENV['PERFORMANCE_ROOT'] + relative_path
+  puts "Visiting #{url}"
+  return url  
 end
 
 describe "Products Performance", :type => :feature, :performance => true do
   describe "/products" do
     it "loads the products listing" do
-      repetitions.times do
-        puts "Visiting #{full_url('/products')}"
+      repetitions.times do        
         visit full_url('/products')
         # Page 1 is Visible
         expect(page).to have_content('Bobby 0')
