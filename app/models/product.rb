@@ -83,4 +83,8 @@ class Product < ActiveRecord::Base
         .where(status: 'active')
         .where(foreign_key: category_ids)
   end
+
+  def thumbnail_path
+    image_path.sub("stickers", "thumbnails")
+  end
 end
