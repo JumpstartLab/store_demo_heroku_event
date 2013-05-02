@@ -41,7 +41,7 @@ RSpec.configure do |config|
   config.include ExampleData::Projects
   config.include Sorcery::TestHelpers::Rails
 
-  config.before(:each, :type => :feature) do
+  config.before(:each, :type => :feature, :performance => true) do
     Capybara.current_driver = :poltergeist
   end
 end
