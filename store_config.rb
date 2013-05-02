@@ -1,5 +1,7 @@
 class StoreConfig
   def self.development_url
+    # Make sure this matches the port you're actually
+    # running the app on locally
     "http://localhost:3000"
   end
 
@@ -8,6 +10,8 @@ class StoreConfig
   end
 
   def self.email_address
-    "katrina@jumpstartlab.com"
+    # This needs to be the same email address
+    # as the one you signed up to the event with
+    "you@example.com"
   end
 end
