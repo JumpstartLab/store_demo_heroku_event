@@ -69,7 +69,7 @@ brew install phantomjs
 After getting your Heroku app up and running, [fork this repo](https://github.com/JumpstartLab/store_demo/fork) and set up a remote for it:
 
 ```bash
-git remote remove origin
+git remote rm origin
 git remote add upstream git://github.com/JumpstartLab/store_demo.git
 git remote add origin git@github.com:YOURNAME/store_demo.git
 ```
