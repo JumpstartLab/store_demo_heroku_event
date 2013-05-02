@@ -2,12 +2,6 @@ require 'spec_helper'
 
 repetitions = 10
 
-def full_url(relative_path)
-  url = ENV['PERFORMANCE_ROOT'] + relative_path
-  puts "Visiting #{url}"
-  return url  
-end
-
 describe "Products Performance", :type => :feature, :performance => true do
   describe "/products" do
     it "loads the products listing" do
