@@ -42,6 +42,13 @@ heroku addons:add pgbackups
 heroku pgbackups:restore DATABASE 'https://github.com/[TODO: URL for pgsql dump]'
 ```
 
+### Install phantom.js
+You'll need phantom.js to run the test suite locally:
+
+```
+brew install phantomjs
+``` 
+
 ### You're ready to go!
 
 ## Appendix
