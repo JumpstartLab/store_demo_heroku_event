@@ -27,9 +27,7 @@
             <%= will_paginate @orders %>
           </tfoot>
           <tbody>
-          <% cache @orders do %>
           <%= render @orders %>
-          <% end %>
           </tbody>
         </table>
     <% else %>

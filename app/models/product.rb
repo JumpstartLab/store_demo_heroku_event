@@ -62,7 +62,7 @@ class Product < ActiveRecord::Base
   end
 
   def product_sales
-    Sale.where(group: 'product').
+    @product_sales ||= Sale.where(group: 'product').
          where(status: 'active').
          where(foreign_key: self.id)
   end
@@ -79,7 +79,7 @@ class Product < ActiveRecord::Base
   end
 
   def category_sales
-    Sale.where(group: 'category')
+    @category_sales ||= Sale.where(group: 'category')
         .where(status: 'active')
         .where(foreign_key: category_ids)
   end
@@ -89,6 +89,6 @@ class Product < ActiveRecord::Base
   end
 
   def product_order_items_count
-    OrderItem.find_all_by_product_id(self.id).count
+    @product_order_items_count ||= OrderItem.find_all_by_product_id(self.id).count
   end
 end
