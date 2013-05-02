@@ -58,6 +58,41 @@ brew install phantomjs
 
 ### You're ready to go!
 
+## Performance
+
+After getting your Heroku app up and running, fork this repo and visit https://travis-ci.org. From there:
+
+* Sign in with your GitHub account
+* Visit https://travis-ci.org/profile
+* Flip the switch to `ON` on your forked store_demo repo
+
+In your app, open `store_config.rb`, and change the values of `production_url` and `email_address` to your Heroku app URL and your email address:
+
+```
+  def self.production_url
+    "http://my-demo-store.herokuapp.com"
+  end
+
+  def self.email_address
+    "me@example.com"
+  end
+```
+
+Push the updated `store_config.rb` to GitHub, and Travis will automatically run a set of timed tests against the specified URL. Once complete, you'll see a line at the bottom of your Travis logs that looks like this:
+
+```
+Runtime of 53.319523 submitted for me@example.com
+```
+
+This number gets sent off to Jumpstart Lab for scoring. Here's our performance goals for the night:
+
+* Baseline performance: 50 seconds
+* Bronze Performance: 42 seconds
+* Silver Performance: 30 seconds
+* Gold Performance: 15 seconds
+
+Go for the gold!
+
 ## Appendix
 
 ### Using PostgreSQL

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-repetitions = 10
+repetitions = 30
 
 describe "Admin Performance", :type => :feature, :performance => true do
   before :each do

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-repetitions = 10
+repetitions = 30
 
 describe "Products Performance", :type => :feature, :performance => true do
   describe "/products" do
