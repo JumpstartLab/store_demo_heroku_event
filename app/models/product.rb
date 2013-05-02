@@ -87,4 +87,8 @@ class Product < ActiveRecord::Base
   def thumbnail_path
     image_path.sub("stickers", "thumbnails") if image_path
   end
+
+  def product_order_items_count
+    OrderItem.find_all_by_product_id(self.id).count
+  end
 end
