@@ -49,8 +49,6 @@ namespace :performance do
 
   desc "Run the performance suite against production"
   task :production => :environment do
-    require 'capybara/poltergeist'
-    Capybara.current_driver = :poltergeist
     ENV['PERFORMANCE_ROOT'] = StoreConfig.production_url
     submit_runtime run_performance_tests
   end

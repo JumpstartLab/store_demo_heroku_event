@@ -9,6 +9,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
 require 'capybara/rails'
+require 'capybara/poltergeist'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -39,5 +40,9 @@ RSpec.configure do |config|
   config.include Rails.application.routes.url_helpers
   config.include ExampleData::Projects
   config.include Sorcery::TestHelpers::Rails
+
+  config.before(:each, :type => :feature, :performance => true) do
+    Capybara.current_driver = :poltergeist
+  end
 end
 

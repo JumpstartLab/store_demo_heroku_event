@@ -11,7 +11,7 @@ end
 describe "Products Performance", :type => :feature, :performance => true do
   describe "/products" do
     it "loads the products listing" do
-      repetitions.times do        
+      repetitions.times do
         visit full_url('/products')
         # Page 1 is Visible
         expect(page).to have_content('Bobby 0')
