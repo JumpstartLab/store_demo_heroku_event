@@ -15,7 +15,7 @@ Clone the repository, then run:
 bundle install
 cp db/monster_demo db/monster_development
 bundle exec rake db:test:prepare
-bundle exec rails s Puma
+bundle exec rails s
 ```
 
 ### Provisioning Heroku
@@ -24,6 +24,7 @@ You need to create an application on Heroku. From within the project directory:
 
 ```
 $ heroku create
+$ git push heroku master
 ```
 
 ### Updating Config
@@ -58,7 +59,7 @@ createuser -sdR monster
 createdb -O monster monster_development
 psql -U monster -d monster_development -f db/monster_development.pgdump
 bundle exec rake db:test:prepare
-bundle exec rails s Puma
+bundle exec rails s
 ```
 
 View the website at [localhost:8080](http://localhost:8080).
