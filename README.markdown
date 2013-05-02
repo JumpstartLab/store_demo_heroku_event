@@ -21,7 +21,11 @@ bundle exec rails s
 
 ### Provisioning Heroku
 
-You need to create an application on Heroku. From within the project directory:
+You need to create an application on Heroku.
+
+First, you'll need a heroku account. Sign up for one if you don't have one.
+
+Then, from within the project directory:
 
 ```
 $ heroku create
