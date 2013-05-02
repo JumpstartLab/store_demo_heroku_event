@@ -66,7 +66,15 @@ brew install phantomjs
 
 ## Performance
 
-After getting your Heroku app up and running, fork this repo and visit https://travis-ci.org. From there:
+After getting your Heroku app up and running, [fork this repo](https://github.com/JumpstartLab/store_demo/fork) and set up a remote for it:
+
+```bash
+git remote remove origin
+git remote add upstream git://github.com/JumpstartLab/store_demo.git
+git remote add origin git@github.com:YOURNAME/store_demo.git
+```
+
+Then visit https://travis-ci.org. From there:
 
 * Sign in with your GitHub account
 * Visit https://travis-ci.org/profile
