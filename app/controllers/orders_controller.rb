@@ -6,6 +6,7 @@ class OrdersController < ApplicationController
   end
 
   def show
+    # @order = current_user.orders.find params[:id]
     order = Order.find(params[:id])
     if current_user.id == order.user_id
       @order = Order.find(params[:id])

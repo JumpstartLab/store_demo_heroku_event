@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '1.9.3'
 
 gem 'rails', '3.2.13'
+gem 'puma', '2.0.1'
 gem 'jquery-rails'
 gem 'rake'
 gem 'bootstrap-sass'
@@ -13,6 +14,8 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'newrelic_rpm'
 gem 'will_paginate'
 gem 'ruby-progressbar'
+gem 'foreman'
+gem 'cache_digests'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -35,6 +38,8 @@ group :development, :test do
   gem 'simplecov'
   gem 'quiet_assets'
   gem 'poltergeist'
+  gem 'bullet'
+  #gem 'ruby-growl'
 end
 
 group :test do

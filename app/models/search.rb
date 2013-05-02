@@ -21,8 +21,7 @@ module Search
   end
 
   def self.filter_admin_orders(params={})
-    orders = Order.includes(:user)
-                  .by_status(params[:status])
+    orders = Order.by_status(params[:status])
                   .by_email(params[:email])
     orders = filter_date(orders, params)
     orders = orders.by_recency.paginate(:page => (params[:page] || 1), :per_page => 24)
