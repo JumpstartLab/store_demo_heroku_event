@@ -33,7 +33,6 @@ group :development, :test do
   gem 'debugger'
   gem 'capybara'
   gem 'simplecov'
-  gem 'heroku'
   gem 'quiet_assets'
   gem 'poltergeist'
 end

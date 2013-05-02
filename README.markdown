@@ -4,6 +4,7 @@
 
 * [Ruby 1.9.3](https://rvm.io/)
 * [Bundler](http://gembundler.com/)
+* [Heroku Toolbelt](https://toolbelt.heroku.com)
 
 We'll use SQLite3 in development.
 
