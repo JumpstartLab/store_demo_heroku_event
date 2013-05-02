@@ -77,7 +77,7 @@ View the website at [localhost:8080](http://localhost:8080).
 
 ```
 brew update
-brew install poltergeist
+brew install phantomjs
 ```
 
 ## Welcome to Frank's Monsterporium, a faux online store
