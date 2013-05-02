@@ -41,7 +41,8 @@ Let's get all our base data running on Heroku:
 
 ```
 heroku addons:add pgbackups
-heroku pgbackups:restore DATABASE 'https://github.com/[TODO: URL for pgsql dump]'
+heroku pgbackups:restore DATABASE
+'https://github.com/JumpstartLab/store_demo/blob/master/db/monster_development.pgdump'
 ```
 
 ### Install phantom.js
