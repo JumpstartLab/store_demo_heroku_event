@@ -16,6 +16,7 @@ gem 'will_paginate'
 gem 'ruby-progressbar'
 gem 'foreman'
 gem 'cache_digests'
+gem 'redis-rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
