@@ -73,9 +73,6 @@ module StoreEngine
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    # Set logger to STDOUT for Unicorn logging
-    config.logger = Logger.new(STDOUT)
-
     # Allow asset compilation on Heroku
     config.assets.initialize_on_precompile = false
   end
