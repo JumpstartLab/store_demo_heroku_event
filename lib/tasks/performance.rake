@@ -9,7 +9,7 @@ def setup_database
 end
 
 def submit_runtime(time)
-  response = Faraday.post 'http://attendance.jumpstartlab.com/runtimes', 
+  response = Faraday.post 'http://jumpstartlab-attendance.herokuapp.com/runtimes',
                           { :email_address => StoreConfig.email_address,
                             :runtime => time }
   if response.success?
