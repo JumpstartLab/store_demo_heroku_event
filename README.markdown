@@ -13,9 +13,9 @@ We'll use SQLite3 in development.
 Clone the repository, then run:
 
 ```bash
-bundle install
-cp db/monster_demo db/monster_development
-bundle exec rake db:test:prepare
+bundle install &&
+cp db/monster_demo db/monster_development &&
+bundle exec rake db:test:prepare &&
 bundle exec rails s
 ```
 
@@ -34,8 +34,7 @@ For more on this, check out the [Managing Your SSH Keys](https://devcenter.herok
 Then, from within the project directory:
 
 ```
-$ heroku create
-$ git push heroku master
+heroku create && git push heroku master
 ```
 
 ### Updating Config

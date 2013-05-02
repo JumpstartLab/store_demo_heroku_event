@@ -11,13 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130402201518) do
+ActiveRecord::Schema.define(:version => 20130502033420) do
 
   create_table "categories", :force => true do |t|
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "categories", ["title"], :name => "index_categories_on_title", :unique => true
 
   create_table "categories_products", :force => true do |t|
     t.integer "category_id"
@@ -57,6 +59,8 @@ ActiveRecord::Schema.define(:version => 20130402201518) do
     t.datetime "updated_at",                                :null => false
   end
 
+  add_index "products", ["title"], :name => "index_products_on_title", :unique => true
+
   create_table "ratings", :force => true do |t|
     t.integer  "product_id"
     t.integer  "user_id"
@@ -89,6 +93,7 @@ ActiveRecord::Schema.define(:version => 20130402201518) do
     t.boolean  "admin"
   end
 
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"
 
 end
