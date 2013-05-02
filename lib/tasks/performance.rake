@@ -14,9 +14,9 @@ def submit_runtime(time)
                             :runtime => time }
   if response.success?
     puts "Runtime of #{time} submitted for #{StoreConfig.email_address}"
-    puts response.body
   else
     puts "Failed to submit #{time} for #{StoreConfig.email_address}"
+    puts response.body
   end
 end
 
