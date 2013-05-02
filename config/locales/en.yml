@@ -96,6 +96,7 @@ en:
       title: 'Dark matter'
     product:
       title: 'Itchy Sweater'
+      product_order_items_count: 'Sales for this thing:'
       description: 'This sweater is made of itchy wool'
     session:
       email: 'Email'
@@ -117,6 +118,7 @@ en:
   product:
     self: 'Product'
     collection: 'Products'
+    product_order_items_count: 'Sales for this thing:'
     rating: 'Your rating'
     title: 'Title'
     quantity: 'Quantity'
