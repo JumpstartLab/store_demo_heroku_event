@@ -4,6 +4,7 @@
   </div>
   <div class="prod_detail_text span6">
     <h2><% t('product.title') %><%= @product.title %></h2>
+    <h3>Sales for this thing: <% t('product.product_order_items_count') %><%= @product.product_order_items_count %></h3>
     <p><% t('product.description') %><%= @product.description %></p>
     <div id="product-categories">
       <b><%= t('categories.self') %>:</b>

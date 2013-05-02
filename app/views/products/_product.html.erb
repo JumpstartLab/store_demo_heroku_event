@@ -1,7 +1,7 @@
 <%= link_to product_path(product) do %>
   <div class="products span2">
     <p><%= image_tag product.thumbnail_path %></p>
-    <h5><%= product.title.titleize %></h5>
+    <h5><%= product.title.titleize %>&nbsp;(<%= product.product_order_items_count %>)</h5>
     <% if product.on_sale? %>
       <p id="onsale"><b><%= t('product.onsale') %></b></p>
       <p id="saleprice"><%= t('product.saleprice') %>: <%= number_to_currency(product.sale_price) %></p>
