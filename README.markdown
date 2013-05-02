@@ -25,6 +25,12 @@ You need to create an application on Heroku.
 
 First, you'll need a heroku account. Sign up for one if you don't have one.
 
+You'll also need to add your public key to your heroku account. Go to the
+[account](https://dashboard.heroku.com/account) page and look for the section
+called _SSH keys_.
+
+For more on this, check out the [Managing Your SSH Keys](https://devcenter.heroku.com/articles/keys) section of the heroku documentation.
+
 Then, from within the project directory:
 
 ```
